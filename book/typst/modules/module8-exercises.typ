@@ -169,7 +169,7 @@
     #link("https://www.desmos.com/calculator/h3wtwjghv0")
     + Find eigen solutions for this differential equation (you may use a calculator/computer to assist).
     + Find a general _real_ solution.
-    + Analytically classify the equilibrium solution.
+    + Analytically classify the equilibrium solution. 
 
       
     ],
