@@ -78,3 +78,43 @@ So what we are really doing this week is teaching the Week 9 move early, on a ca
 can verify it by hand. That is worth saying to yourself when the hour disappears: the algebra they
 grind through here is the algebra that makes linearization feel inevitable in Week 9, and they will
 see it a second time.
+
+== Education literature
+
+*There is none, and that is the finding.* Of the seventeen design decisions
+cross-referenced in the companion report, the affine re-centring sequence is the
+one with no published study of student thinking behind it. Nobody has written
+about using the displacement substitution as the _route into_ affine systems in a
+first course, before linearization, and nobody has reported how beginners cope
+with it. Your multi-instructor notes are currently the best documentation that
+exists --- including the recurring student proposal to append a constant
+coordinate and force the system into matrix form.
+
+Two things narrow the claim, and both are useful in class.
+
+- *The substitution itself is routine one chapter along.*
+  #cite(<blanchard2012de>, form: "prose") give this book's own motivation when
+  they linearize --- "Linear systems always have an equilibrium point at the
+  origin. Hence the first step... is to move the equilibrium point to the origin
+  via a change of variables" --- and #cite(<boyce2017elementary>, form: "prose")
+  adds "This involves no loss of generality." If a student asks whether this is a
+  trick invented for the course, it is not.
+- *It is routine one course up.* Toronto's MAT267 @mat267 sets exactly this move
+  as an assignment, and then asks two questions we do not. When $A$ is singular
+  there are infinitely many steady states: do different choices give the same
+  phase portrait? And when there is _no_ steady state the substitution is
+  unavailable. Both make good extensions for a group that finishes early, and the
+  second is the principled answer to the append-a-constant-coordinate proposal.
+
+*If you keep notes on how this hour goes, they are publishable.* _PRIMUS_ and the
+_CODEE Journal_ both take task-sequence-plus-classroom-evidence articles, and
+this is the most original teaching content in the book.
+
+=== References
+
+#bibliography(
+  "../literature-cross-reference.bib",
+  title: none,
+  full: false,
+  style: "american-psychological-association",
+)

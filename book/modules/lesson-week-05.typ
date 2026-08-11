@@ -73,3 +73,50 @@ even if you don't say it: if $y(t)$ is a solution then so is $y(t - tau)$, and *
 same trajectory*; conversely, two solutions with the same trajectory differ only by a time shift.
 That is what "we gave up seeing time" buys---every time-translate of a solution collapses onto one
 curve, which is why finitely many curves can stand for all solutions.
+== Education literature
+
+*The hardest thing this week is the one students will not report as hard.*
+#cite(<trigueros2000>, form: "prose") interviewed 18 students and found that "the
+meaning of a point in phase space proved to be a problem to most of the students
+in both groups. They were not able to see it as a representation of the state of
+an autonomous system at a particular time _even when they were able to solve the
+system_." Fluency with tangent fields for single equations did not carry over.
+Her conclusion is that generalising from one equation to systems "is not direct
+and may need to be made explicit in class."
+
+Two of her observations map onto specific exercises here.
+
+- Students who tried to read a phase-plane curve by tabulating values "were not
+  then able to draw the other plots or to interpret the solution because they
+  could not see the dependence with the independent variable on the phase plane
+  plot." The prompt in this module --- at $t=0$, where are $x$ and $y$? at $t=1$?
+  now plot it --- is built to repair exactly this. Do not skip it for time.
+- "A very common difficulty was to relate a zero derivative for one of the
+  variables with a vertical arrow on the phase plane." Worth raising explicitly
+  when you set the drawing standards.
+
+*The three-dimensional slope field is a move students make on their own.*
+#cite(<keene2007dynamic>, form: "prose") found students spontaneously reaching
+for a third axis to make time explicit; one described the phase plane as what you
+get when "you are looking from infinity down, you are seeing all of $t$." If a
+student says something like this, it is worth writing on the board.
+
+*The drawing standards are doing more than tidiness.* @rasmussen2009arrows
+document arrow direction as a classroom practice that has to be _established_
+rather than told.
+
+*One bias to name when students sketch.* #cite(<artigue1992>, form: "prose")
+identified _monotonic conceptions_ as an obstacle: asked for the simplest curve
+compatible with the constraints, students silently add one more constraint, that
+convexity change as little as possible. It is invisible because the equations we
+set usually satisfy it. The cheap countermeasure is to ask, once, what else could
+have been drawn.
+
+=== References
+
+#bibliography(
+  "../literature-cross-reference.bib",
+  title: none,
+  full: false,
+  style: "american-psychological-association",
+)

@@ -93,3 +93,48 @@ bifurcation study, and elsewhere it is not an advanced topic: Blanchard and Juds
 bifurcations and bifurcation diagrams in their *first-order* chapters, alongside the phase line.
 We run one here without naming it. Either naming it in the wrap-up, or deciding aloud not to, is
 better than leaving it unsaid---students who take another course will recognize the picture.
+== Education literature
+
+*Linearization is well-covered territory; the opportunity is next door.* As $b$
+sweeps from 0 to 2 the tree model's equilibria collide and stability turns over.
+That is a bifurcation study, and the course runs it without ever naming it.
+
+#cite(<rasmussen2019bifurcation>, form: "prose") publish a sequence in which
+students _reinvent_ the bifurcation diagram, and it is closer to our machinery
+than one might expect:
+
+- Students analyse a logistic fish-hatchery model, then add a constant harvesting
+  rate $k$, and report on the effect of different $k$ to the owners *in one page*.
+  The length limit is the design device --- it "encourages consolidation of
+  analyses," which is what pushes students to invent the diagram rather than hand
+  in twenty pages of phase lines.
+- One group in the paper did it *in a spreadsheet*: a column of $P$ values
+  repeated across columns of $k$, each cell evaluating $d P slash d t$ and shaded
+  by sign, with equilibria falling where the shading switches. The instructor
+  then draws a curve along the colour boundary and names it.
+
+We already have all three ingredients: a model with a parameter, a class fluent
+in spreadsheets, and a final report. The tree model's $b$ is the fish-hatchery's
+$k$.
+
+*Two reasons to decide deliberately rather than by default.* The progression in
+@rasmussen2019waypoints puts reasoning about rate of change "as a parameterized
+function" at the top --- the point where the object of study stops being any
+solution, or even the space of solutions, and becomes how that space changes as a
+parameter moves. On that account the tree model's $b$ is the summit of the
+course, not an ornament on the linearization week. And bifurcation is not an
+advanced topic in current practice: @blanchard2012de and @judson2025odeproject
+both put one-parameter families and bifurcation diagrams in their _first-order_
+chapters, alongside the phase line. A student who has met the word elsewhere will
+recognise our picture and not our vocabulary.
+
+Either name it, or add a line here recording the deliberate choice not to.
+
+=== References
+
+#bibliography(
+  "../literature-cross-reference.bib",
+  title: none,
+  full: false,
+  style: "american-psychological-association",
+)

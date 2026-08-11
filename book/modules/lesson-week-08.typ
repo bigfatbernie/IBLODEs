@@ -72,3 +72,34 @@ Blanchard also has the cleanest one-line motivation for the whole week, if the c
 complex numbers have to appear at all: "We cannot use the geometric ideas of the previous sections
 to find solution curves that are straight lines *because there aren't any straight-line
 solutions*."
+
+== Education literature
+
+*No study compares the two routes,* so treat the choice as a considered bet. The
+rationale is consistent with the emergent-models strand running through
+@rasmussen2007reinventing on students reinventing solutions to linear systems:
+the point is that students keep operating with the structure they built rather
+than switching to an opaque shortcut at the moment things get hard.
+
+*But "the standard textbook trick" is a mischaracterisation, and the phrase is
+worth dropping.* #cite(<zill2017first>, form: "prose") derives his real solutions
+by forming exactly our two linear combinations, up to scale, expands them with
+Euler's formula, and only _then_ observes that the results are $"Re"(K_1)$ and
+$"Im"(K_1)$ --- which he packages as a theorem for students to apply.
+#cite(<blanchard2012de>, form: "prose") prove the real-and-imaginary-parts
+theorem from linearity rather than asserting it.
+
+So the real-parts rule is the _summary_ of our own argument, not a rival to it.
+The accurate and more interesting claim, and a good thing to say at the wrap-up,
+is that we stop one step short of where the standard texts stop and keep the
+reasoning as the working method. Students who read ahead will meet the theorem
+and should be able to recognise it as their own calculation.
+
+=== References
+
+#bibliography(
+  "../literature-cross-reference.bib",
+  title: none,
+  full: false,
+  style: "american-psychological-association",
+)

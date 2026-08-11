@@ -83,3 +83,37 @@ they are being asked to reuse more.
 
 The vertical-axis difficulty is ours to solve; no text treats it, which is why the last exercise
 exists.
+== Education literature
+
+*Thin, and the practice base is stronger than the research base.*
+#cite(<naranjo2024sophisticated>, form: "prose") on constructing differential
+equations in physical contexts is the nearest neighbour. The specific difficulty
+this week identifies --- that one axis of the phase plane is $x'$, so a
+trajectory heading downward can correspond to an increasing solution --- appears
+in the research record only glancingly, and *none of the seven comparison
+textbooks treats it at all.* If you find a way of explaining it that works, it is
+worth writing down; nobody else has.
+
+On the ordering, we are in a minority but not alone.
+#cite(<blanchard2012de>, form: "prose") state our policy in the preface ---
+"Rather than consider second-order equations separately, we convert these
+equations to first-order systems. When these equations are viewed as systems, we
+are able to use qualitative and numerical techniques more readily" --- and
+@judson2025odeproject likewise reaches second-order only after linear systems.
+Zill, Boyce, Lebl and Trench go the other way, as do all three sample syllabi in
+the MAA curriculum working group report @devaney-cupm. That report does endorse
+our mechanism, though: "it is natural to convert second order linear differential
+equations to planar systems... so solutions can then be visualized in the phase
+plane."
+
+So the argument for doing it this way is real, but it is an argument rather than
+a consensus, and students consulting another book will find the other order.
+
+=== References
+
+#bibliography(
+  "../literature-cross-reference.bib",
+  title: none,
+  full: false,
+  style: "american-psychological-association",
+)

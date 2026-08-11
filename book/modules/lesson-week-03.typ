@@ -81,3 +81,38 @@ the phase-portrait payoff in Week 5 lands early and weakly.
 On the rates-versus-amounts confusion: Trench heads it off notationally, writing $P' = a(P) P$ and
 saying in words that $a$ is "the rate of change of population per unit time *per individual*."
 Saying "per individual" out loud costs nothing and is worth doing.
+
+== Education literature
+
+*The instructor note about $B$ and $D$ being confused with counts is a
+documented, predictable phenomenon, not a local observation.*
+#cite(<rowland2004interpretations>, form: "prose") gave 44 students a diagnostic
+quiz: *20 of them (45%) used amount-type thinking on both questions,* and only
+eight got both right. Asked what the constant term in a drug-infusion model
+meant, students called it an initial amount, a maximum, or an equilibrium
+amount --- anything but a rate.
+
+The same paper reports interviews on units: five of eight students gave
+$d D slash d t$ the units mg/h while giving the constant term the units mg; two
+of those five noticed the inconsistency but could not resolve it, and two others
+"explicitly stated their belief that the units did not have to be consistent."
+The follow-up study @rowland2006units quantifies the spread: of 42 students who
+described a term as some sort of "rate", only eight gave it rate units.
+
+Two consequences for this week. Asking for the units of every term is not
+pedantry, it is the diagnostic. And the students who cannot do it are unlikely to
+volunteer that fact, so ask the whole room rather than waiting for a hand.
+
+#cite(<naranjo2024sophisticated>, form: "prose") analyse how students set up
+differential equations for physical contexts and argue that flexibility across
+several set-up strategies predicts success --- relevant if you extend the
+modelling here.
+
+=== References
+
+#bibliography(
+  "../literature-cross-reference.bib",
+  title: none,
+  full: false,
+  style: "american-psychological-association",
+)

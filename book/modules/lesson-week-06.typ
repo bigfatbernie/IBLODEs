@@ -79,3 +79,45 @@ raise it---our plug-in-a-value-of-$t$ check is sufficient here and we are not ob
 avoiding it. And most texts organize the classification via the *trace--determinant plane*, which
 we skip in favour of the signs of the two eigenvalues; a student who has met it is not doing
 anything wrong.
+
+== Education literature
+
+*Drawing eigen solutions before computing eigenvalues is an argued position, not
+an eccentricity.* #cite(<rasmussen2003eigenvectors>, form: "prose") make the case
+for the _eigenvector-first_ (or slope-first) approach against the traditional
+order, on the grounds that it fits how students actually reason. Their sequence
+is prediction, exploration, mathematization, generalization --- close to how this
+week is already built. @bouhjar2018eigen examine procedural against conceptual
+understanding of eigenvectors and eigenvalues under inquiry-oriented instruction.
+
+Two things in that paper are worth knowing while you teach the hard moment.
+
+- *The hard moment is the payoff, not a defect.* Justifying that an eigen
+  solution's graph is a ray, because the arrow at $arrow(r)(t)$ must be
+  $lambda arrow(r)(t)$, is the whole point of the ordering.
+- *Their reform course still teaches the standard method afterwards,* explicitly
+  as the destination: students "are eventually introduced to the conventional
+  terminology... and the more traditional method of finding eigenvalues before
+  eigenvectors. As such, students are in a much better conceptual position to
+  appreciate the significance of first finding eigenvalues." Their student's
+  summary is a good thing to read to a class finding this slow: "While I later
+  came to prefer the eigenvalue method, I think that [the slope-first method]
+  helped me gain a conceptual understanding of what a straight-line solution
+  was."
+
+*You are already using the uniqueness theorem this week.* The argument that a
+general solution to a matrix system covers every initial value problem is
+existence and uniqueness doing work, and the counterexample where it fails is the
+theorem earning its place. #cite(<rasmussen2008theorems>, form: "prose") found
+that students who had used a theorem as a tool went on to invoke it
+spontaneously on tasks that had not asked for it. Naming it here costs one
+sentence and makes Week 11 less abrupt.
+
+=== References
+
+#bibliography(
+  "../literature-cross-reference.bib",
+  title: none,
+  full: false,
+  style: "american-psychological-association",
+)

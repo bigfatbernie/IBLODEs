@@ -80,3 +80,59 @@ solution.
 outcomes, and Wiggins explains why the conjunction is not redundant: there are solutions that do
 converge, but make large excursions on the way. If you want a ready example, a centre---the
 undamped oscillator---is the one every text uses.
+== Education literature
+
+*The prediction in the notes --- that a few students will spend the term unsure
+whether a horizontal line is an equilibrium solution --- is confirmed, and it has
+a name.* #cite(<zandieh1999>, form: "prose") found that for many students
+equilibrium solutions "do not appear to be a subset of their concept images of
+solution." One cause is that an equilibrium solution is a _constant function_,
+and constant functions are exactly the kind of non-paradigmatic case students
+treat as a non-example of function. #cite(<rasmussen2001new>, form: "prose")
+calls the general difficulty the _function-as-solution dilemma_, and
+@keene2012gestures devoted a paper to how meaning for equilibrium solutions gets
+built over time. The concept is slower than its one-line definition suggests;
+budget accordingly.
+
+*The specific error the derivative-zero shortcut produces.* In Rasmussen's study,
+three of six students at some point claimed that $y = t$ is an equilibrium
+solution of $y' = y - t$ --- the shortcut applied where it does not belong. One
+went further, hunting the direction fields for a _vertical_ line of arrows,
+having reasoned from $y' = t + 1$ that $t = -1$ and so "it would have to be a
+vertical equilibrium solution and there's no graph like that." This is precisely
+why the geometric definition comes first here.
+
+*Give the other set a name.* Zandieh and McDonald watched students reach for
+"equilibrium" to describe where the derivative vanishes, simply because nobody
+had given them _isocline_ or _nullcline_ and they needed a word. Their
+recommendation is to supply the label. Offering "nullcline" in passing costs one
+sentence and removes the pressure that makes students overload "equilibrium."
+They also note that mathematicians use "equilibrium" both for a constant
+_solution_ and for a _point_ --- the distinction this course already insists on,
+which is independent confirmation that it is worth the words.
+
+*Drawing 1-d phase space vertically has evidence behind it.*
+#cite(<karimifardinpour2018comparing>, form: "prose") ran three treatments
+against the failure to coordinate the two planes. Only their "Dynamic" method
+improved long-term prediction significantly, and its central feature is the
+rotation we already use. It adds two cheap things we do not: a sign chart, and
+horizontal dotted lines carrying equilibria and inflection points across from one
+plane to the other. The dotted lines are credited specifically with students
+getting concavity right. Caveats: 16 per group, and the reported statistics do
+not always match the reported $p$-values.
+
+*A hook worth taking rather than dropping.* The notes record an instructor
+raising whether solution curves can cross an equilibrium solution and then
+keeping "this talk to a minimum." That question is the motivated entry to
+uniqueness, which @iode-materials reaches at Unit 5 of 14 and every comparison
+textbook states in its opening chapter. Answering it here costs two minutes and
+is reused in Weeks 5 and 6.
+
+=== References
+
+#bibliography(
+  "../literature-cross-reference.bib",
+  title: none,
+  full: false,
+  style: "american-psychological-association",
+)

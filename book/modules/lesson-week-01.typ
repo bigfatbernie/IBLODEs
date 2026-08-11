@@ -4,66 +4,51 @@
 
 
 The first week is about:
-- Setting the tone of the class
-- Exploring how to model real-world problems including:
-  - The importance of assumptions, including how many assumptions we make without realizing it
-  - Our expectations of level of detail for this course
-  - Introducing the "Definitions + Assumptions + Relationships" modeling framework used in this
-    course
-- Offloading simulation arithmetic to spreadsheets
+- Setting the tone and expectations of the class.
+- Exploring how to model real-world problems.// including.
+//   - The importance of assumptions, including how many assumptions we make without realizing it
+//   - Our expectations of level of detail for this course
+//   - Introducing the "Definitions + Assumptions + Relationships" modeling framework used in this
+//     course
 
+== Setting the tone and expectations
 
-// Explain a bit about not using full DeXABAR
-// Emphasize students need to be told that the DAR process is not linear. They may revisit definitions and assumptions after they try writing down relationships, etc.
+Set aside time on the first day to sell the "active learning" approach to students. This could be
+done with, for example, Dana Ernst's "Setting the Stage" activity, or other reflective activities. // XXX Fill in with links
+Explain to students the expectations of the course: that they should read chapters before coming to
+class so we can practice applying techniques in class; that class time, homeworks, and practice
+problems are all part of the course and you must involve yourself with every resource or you will
+miss out. This is especially important because *solving methods are not in the in-class materials*.
+Specifically, separation of variables, etc. are in the Appendices and should be practiced on the
+homeworks, but no in-class exercises focus on these algebraic methods.
 
-// Do active learning introduction
-// Emphasize simulation focus -- talk about why we chose Excel rather than another programming language.
+// XXX fill in with with what Bernardo expects as good guide would have to say about class expectations
 
-// Talk about modelling being an imperfect and creative processes.
+== Exploring how to model real-world problems
 
+This text uses an abbreviated modeling framework focused on *Definitions*, *Assumptions*, and
+*Relationships* (DAR).#footnote[This is only part of a more comprehensive modeling framework (for
+  example, SIAM's $M^2(G S)^2$ or the DeXABAR framework from #link(
+    "https://github.com/bigfatbernie/IBLmodellingDEs",
+  )[`IBLmodellingDEs`]). The the DAR framework leaves off explore/assess/report steps of other
+  frameworks. This is done for the sake of time so that we can more directly get at differential
+  equations as the basis for our models. // XXX decide whether to expand this explanation.
+] This process works as follows:
++ *Definitions*: define variables, functions, and parameters. This usually looks like an annotated
+  list of notation.
++ *Assumptions*: list assumptions that you are making. This usually looks like a bulleted list of
+  sentences. For example:
+  - "Starfish never die" or
+  - "The population of starfish is measured in millions, so fractional population values make
+    sense." or
+  - "In the absence of friction, the spring obeys Hooke's law."
++ *Relationships*: equations relating defined variables, parameters, and functions. Every
+  relationship should be justified by the assumptions. The result usually looks like a differential
+  equation and some boundary conditions.
 
-// Talk about how the first two weeks end in a "modelling hour", meant to fill whatever time is there with modelling practice.
-
-== AI Draft
-
-=== Setting the tone
-
-Spend a few minutes on day one explaining how the class runs. Students work on the exercises, you
-circulate and prompt, and each exercise ends with a whole-class wrap-up. Tell them explicitly that
-you will *not* lecture the answer first, and that being stuck is the expected state.
-
-Modelling is a creative and imperfect process. Two students can produce different, defensible models
-of the same situation. Say this out loud, and then act on it: collect many proposals, acknowledge
-them, and _then_ circle a minimal set of definitions to standardize on so everyone can simulate the
-same thing.
-
-=== The modelling framework
-
-*DeXABAR* is the six-step modelling framework from the companion IBL modelling text
-(#link("https://github.com/bigfatbernie/IBLmodellingDEs")[`IBLmodellingDEs`]), which in turn follows
-SIAM's $M^2 (G S)^2$ handbook and GAIMME:
-
-/ *De*: Define the problem.
-/ *X*: Explore the problem (in that text, by building a mind map).
-/ *A*: Make assumptions.
-/ *B*: Build a model.
-/ *A*: Assess (analyze) the model.
-/ *R*: Write a report.
-
-This course uses only the middle of that: *Definitions / Assumptions / Relationships* (DAR), which is
-roughly the *A* and *B* steps. We don't do a separate explore step, and assess and report live in the
-homework, the tutorials, and the final project rather than in lecture. Lecture time goes to setting
-models up, because that is where students are weakest and where the differential equations actually
-come from.
-
-If you have taught from the DeXABAR text, be aware of the vocabulary shift: what that book calls
-"assumptions" and "building a model" we split into Definitions, Assumptions, and Relationships, and
-we ask for the definitions _explicitly_ rather than folding them into the model-building step.
-
-DAR is *not* a linear checklist. Students will try to complete all the definitions, then all the
-assumptions, then all the relationships, and get stuck. Model the real process: write some
-definitions, attempt a relationship, discover you need new notation or a hidden assumption, and go
-back. Announce that you are doing this each time you do it.
+This process *doesn't happen in order*. When you write a relationship, you may realize that you need
+an additional assumption; or, when you start writing assumptions, you may realize that you need to
+define a new variable. *Stress this iterative process to students*.
 
 Expect the question "when do we stop writing down assumptions?". There is no algorithm. Part of this
 course is learning what the standards are in a math class; other fields (physics, engineering, law)
@@ -71,40 +56,47 @@ have different standards.
 
 === Spreadsheets
 
-The point of the spreadsheet is to get the arithmetic out of the way so students can look at the
-_model_. Give a short (5 minute) live spreadsheet demo before the first simulation---see
-@app:spreadsheet and the technology notes in the introduction to this guide for why spreadsheets
-rather than Python/MATLAB.
+@ex:m1 asks students to simulate starfish population using a spreadsheet. Before this exercise, give
+a short (5 minute) demo on spreadsheet basics. These are outlined in @app:spreadsheet. Although most
+students will recognize spreadsheets, many will not know how to use cell referencing, dragging to
+fill, and using `$` to lock a column/row.
 
-- Most students believe they know spreadsheets; almost none know cell referencing, dragging to
-  fill, and locking with `\$`. Demo these three things specifically.
-- Tell students to avoid tablet and phone versions of spreadsheets.
-- Students may ask to use a "real" programming language. They are welcome to do so _in addition_,
-  but they must be able to do the computation in a spreadsheet.
 
-=== Timing
 
-The first exercise reliably takes 45--60 minutes when run properly. Break it into stages
-(definitions $arrow$ discuss, assumptions $arrow$ discuss, relationships $arrow$ discuss) rather
-than giving it as one long block.
+== Education literature
 
-Both this week and next end with an open *modelling hour*: a modelling exercise sized to fill
-whatever time remains, with the unused parts assigned as homework. Plan the earlier exercises
-carefully and let the last one absorb the slack.
+=== The modelling-first ordering is the field's oldest and best-supported prescription.
+#cite(
+  <artigue1992>,
+  form: "prose",
+) found that teaching "remains centered on the algebraic setting," and reported what students
+conclude from it: "most of them are convinced that there exists a recipe allowing the exact
+algebraic integration of each kind of differential equation and that the aim of research in this
+field is to complete the existing cook-book." That belief is what Week 1 exists to prevent. #cite(
+  <kaiser2006survey>,
+  form: "prose",
+) would classify our stance as the "realistic / applied" perspective: real problems from outside
+mathematics, taken seriously as problems.
 
-=== How other texts frame this
+=== Announcing that DAR is not linear is better than merely knowing it.
+#cite(<borromeoferri2006phases>, form: "prose") tracked _individual modelling routes_ and found
+students traverse the modelling cycle in loops and jumps --- the tidy diagram is an idealisation.
+Most treatments stop at warning the teacher. Saying it out loud to the class, each time you double
+back, goes further than the published advice, and is the cheapest thing in this guide.
 
-Every ODE text that gives a modelling framework at all lists *assumptions before definitions*.
-Blanchard--Devaney--Hall is closest to ours: state the assumptions, then "completely describe the
-variables and parameters", then derive the equations---DAR with the first two steps swapped. Zill
-pairs "identify the variables" with "make a set of reasonable assumptions"; Boyce--DiPrima gives
-construct / analyse / compare-with-data. Two things none of them do, and we do: ask for the
-definitions _first_, and warn that the process is not linear.
+=== Equity considerations
 
-Two lines worth stealing. Blanchard: "we must avoid _hidden assumptions_ that make the model seem
-mysterious or magical," and, on the definitions step, "leaving this step out is like deciding you
-will speak your own language without telling anyone what the words mean."
+Across 20 inquiry-oriented classrooms, #cite(<reinholz2022inequitable>, form: "prose") found that
+women's participation rate predicted women's performance while men's did not, and that the classes
+with the smallest gap were those with the most student-to-student exchange rather than
+instructor-to-student. Keep this in mind during discussion time. If you only choose eager
+volunteers, you may incidentally only hear from a subset of the class.
 
-Also worth knowing what we are pushing back on: Trench states that a good model must be "sufficiently
-simple so that the mathematical problem can be *solved*." Dropping solvability as a modelling
-constraint is exactly what simulation buys us, and it is the reason Week 2 exists.
+=== References
+
+#bibliography(
+  "../literature-cross-reference.bib",
+  title: none,
+  full: false,
+  style: "american-psychological-association",
+)

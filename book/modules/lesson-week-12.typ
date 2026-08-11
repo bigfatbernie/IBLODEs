@@ -64,3 +64,57 @@ The catenary has no counterpart in any of these books. If you want a second exte
 problem in reserve, the ones that recur elsewhere are competing species (Blanchard, Boyce, Judson),
 the SIR epidemic model (Blanchard, Judson) and the Van der Pol oscillator---all of which the class
 now has the tools for.
+
+== Education literature
+
+*The catenary and the pendulum are where a term of graphical reasoning is cashed
+in, so it is worth knowing what the research says about graphical reasoning under
+load.* #cite(<artigue1992>, form: "prose") separated graphical work into three
+registers --- interpreting a picture, predicting one, and _justifying_ one ---
+and found the difficulties collapse into the third. Her students scored 50--90%
+on prediction tasks and 0--30% on justifying the very drawings they had just
+produced. They could draw the right picture and not say why it was right.
+
+Her diagnosis is not that the analysis is hard. It is that a picture arrives in a
+maths course with no standing to carry an argument: "the graphic setting is a
+sub-setting used for representation, not for justification." Ask for a graphical
+proof and, in her words, "the traditional didactic contract about proof is broken
+and the teacher must negotiate a new contract with the students" --- suddenly
+nobody knows which steps need justifying or what counts as an argument.
+
+*What fixed it, and it is one sentence long.* In her second year the team gave
+the graphic setting real machinery: regions of the plane together with what it
+means for the vector field to point _inward_ or _outward_ along their boundary,
+plus the theorem that a solution must leave such a region where the field points
+outward --- so a region the field points into everywhere is a trap. Proof scores
+moved to 13--77%, and "nearly all the correct proofs produced were based on the
+use of areas."
+
+Two distinct tools are worth separating out loud before the pendulum phase
+portrait, because the class has been using both informally since Week 4 and has
+been told the name of neither.
+
+- *Trajectories cannot cross.* This is uniqueness, and it is what actually
+  licenses the separatrix reading: a trajectory inside the closed orbits stays
+  inside because it cannot cross the separatrix, and one outside goes over the
+  top for the same reason. #cite(<blanchard2012de>, form: "prose") and
+  #cite(<trench2013elementary>, form: "prose") both state it as a numbered fact
+  for exactly this purpose. It is the Week 11 theorem, arriving a week late for
+  the argument that needs it.
+- *A region the field points into everywhere is a trap.* This is Artigue's area
+  theorem, and it is the tool for the cases the first one does not reach ---
+  where the boundary you care about is _not_ itself a solution curve. It is what
+  makes a bounded-from-below or eventually-monotone claim provable rather than
+  merely visible.
+
+Naming the two, once, and saying which one a given picture argument is using, is
+the cheapest upgrade available to the course.
+
+=== References
+
+#bibliography(
+  "../literature-cross-reference.bib",
+  title: none,
+  full: false,
+  style: "american-psychological-association",
+)

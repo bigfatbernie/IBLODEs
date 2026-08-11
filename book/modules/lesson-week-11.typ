@@ -75,3 +75,63 @@ them to $A arrow(x) = arrow(b)$: when $A$ is invertible there is exactly one sol
 not, there is either no solution or infinitely many. Our students have just spent five weeks on
 $2 times 2$ matrices, so the no-solution/one/infinitely-many trichotomy is a structure they already
 own. Worth a sentence in the wrap-up.
+
+== Education literature
+
+*This is the one placement decision in the course that the literature argues
+against.* Everything else in the companion report either survives contact with
+the research or sits in a gap where nothing has been studied. This does not.
+
+#cite(<rasmussen2008theorems>, form: "prose") take the uniqueness theorem for
+first-order equations as their case study. Their starting point is that "students
+in many undergraduate mathematics courses tend not to readily and appropriately
+use theorems as tools for making arguments and solving problems," and their
+contribution is an account of the conditions under which their students did. They
+report that project students used the theorem as a problem-solving tool
+significantly more than conventionally taught students, and that after
+instruction students invoked it _spontaneously_ on tasks that had not asked for
+it. Note what the chapter does and does not argue: it is about how a theorem
+becomes usable, not about where in a syllabus it belongs.
+
+*Every comparator places it earlier.* @iode-materials reaches uniqueness at Unit
+5 of 14, motivated by a helicopter whose two candidate descent models are
+$h' = -h$ and $h' = -h^(1 slash 3)$, only one of which lands it. The traditional
+MAT244 reaches it in week 4, MAT267 builds its whole linear theory on it, all
+three CUPM sample syllabi @devaney-cupm put it in the opening first-order block,
+and all seven comparison textbooks state a theorem in their first chapter.
+#cite(<wiggins-ode>, form: "prose") is the most uncomfortable, because he shares
+our view of _how_ to treat it and differs only on _when_: "The standard way of
+treating this in an ODE course is to 'prove a big theorem' about existence and
+uniqueness. Rather than do that... we will consider some examples that illustrate
+the main issues." Counterexamples first, theorem second, no proof --- in week 1.
+
+*What early placement buys them is the part worth stealing.*
+#cite(<blanchard2012de>, form: "prose") use uniqueness in the phase plane to
+argue that solution curves cannot cross, so a closed trajectory traps everything
+inside it. #cite(<trench2013elementary>, form: "prose") states it as a numbered
+fact: "Distinct trajectories can't intersect." @judson2025odeproject attaches it
+to equilibria. That is the same fact this course leans on in Weeks 4 to 6 without
+naming, so the theorem arrives in Week 11 having already done a term's work
+invisibly.
+
+*The dissent, which is serious.* #cite(<rota1997ten>, form: "prose") devotes his
+fifth lesson to "Forget about existence and uniqueness of solutions," calling
+existence theorems "psychological theorems... instances of those results of
+mathematics that make little difference." He concedes uniqueness is "a touchier
+point" and admits he never made the argument convincing to students. Our late,
+light treatment has a distinguished defender; it is just not the position the
+empirical work supports.
+
+*On boundary value problems there is almost nothing.* @lozada2021review, a
+systematic review of 120 articles, found existence and uniqueness for first-order
+scalar equations treated in only four of them, and named it a topic where
+research is "incipient."
+
+=== References
+
+#bibliography(
+  "../literature-cross-reference.bib",
+  title: none,
+  full: false,
+  style: "american-psychological-association",
+)
