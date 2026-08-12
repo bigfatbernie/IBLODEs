@@ -1,20 +1,74 @@
 
 // Have a Euler quiz before this week
 
-This week is about inter-related quantities and how they result in systems of ODEs. This week is not
-about solving, but about visualizing via component graphs and phase space.
+This week is about:
+- Modelling with inter-related quantities and how they result in systems of ODEs.
+- Visualizing the behaviour of solutions via graphs in component and phase spaces.
+//  - This week is *not* about solving.
 
-In this class we distinguish the following:
-- Component space (a coordinate system with the independent and dependent variables as axes)
-- Phase space/phase plane (a coordinate system with the dependent variables as axes)
-- Phase portrait, introduced in the next module XXX, (a plot of the vector field whose vectors come
-  from the derivatives)
-- Graphs in component space/phase space
+== Modelling with inter-related quantities
 
-We distinguish between these because sometimes we want to analyze a specific solution and sometimes
-we want to visualize "all solutions". Students initially struggle with this distinction, but when
-they get it, it helps break problems into steps (e.g., "first label the axes of the phase plane",
-"next, plot a solution to the IVP", etc..).
+Real-world models usually involve multiple interacting quantities. The main thrust of the course is
+developing tools to analyze these models, so we are quickly moving from one-dimensional models to
+multi-dimensional systems.
+
+=== Why start with systems so early?
+
+There are plenty of techniques applicable to one-dimensional models yet to study, including the
+capstone of the course, linearization. However,
+- Autonomous one-dimensional models don't have much variety in their solutions.
+- Concepts like phase space are less intuitive in one dimension. After all, why would you go from a
+  2d plot to a 1d plot and lose information when complete information already fits on the page?
+- Autonomous equations in one dimension are separable. Despite most functions not having a
+  close-form antiderivative, we want to distance ourselves from the "integrate it" mindset.
+
+
+== Visualizing the behaviour of solutions (graphs in component and phase spaces)
+
+The definitions we use in this course are:
+- Component space: a coordinate system with the independent and _a_ dependent variable as axes.
+- Phase space: a coordinate system with the dependent variable(s) as axes.
+- Phase portrait (introduced in @mod:phase-portraits): a plot of the vector field in phase space
+  whose vectors are tangent to solutions and whose length is given by the speed of the solution.
+
+Of note, we always use the terms "component *space*", "phase *space*"#footnote[
+  You may decide to call this the "phase plane", but keeping the word space is more consistent.],
+and "graphs in component/phase *space*" and avoid terms like "phase plots"---the shorter names blur
+the distinction between the _space_ and a _graph drawn in it_. Correct yourself in front of the
+class if you slip up; it advertises that the wording is deliberate.
+
+=== Two-dimensional phase space is first
+
+We emphasize two-dimensional phase space because it is easier to motivate and more relatable to
+students. Students are used to seeing graphs in 2d, whereas 1d graphs are unusual (and if you
+actually graph solutions in a 1d phase space, they are either points, line segments, or rays).
+Further, it is difficult for students to recognize a need for 2d phase---if you are studying a
+single autonomous equation, why would you look at the phase space rather than full graphs in
+component space?
+
+=== The term "Autonomous"
+
+Plots in phase space make sense for autonomous equations. However, at this point don't stress the
+autonomous requirement. When students have a better understanding of phase space (and
+multi-dimensional modelling), you can talk about when "phase space fails".
+
+=== A mapping analogy
+
+Students are already familiar with phase space and component space, but they might not realize from
+where: maps. For instance, if you plan a trip with Google Maps, the map will show a trace of your
+prospective journey. Information about time/speed is absent from the map itself, however, one can
+imagine plotting their coordinates vs. time to get "component graphs" for their prospective journey.
+
+Later on, after the introduction of phase portraits in @mod:phase-portraits, students may notice
+that the "speed" of their prospective journey is indicated by color rather than by arrow length.
+
+
+// We distinguish between these because sometimes we want to analyze a specific solution and sometimes
+// we want to visualize "all solutions". Students initially struggle with this distinction, but when
+// they get it, it helps break problems into steps (e.g., "first label the axes of the phase plane",
+// "next, plot a solution to the IVP", etc..).
+
+
 
 // Strategy is to bootstrap population models, adding complexity -> LV systems as an excuse to study systems.
 
@@ -22,91 +76,23 @@ they get it, it helps break problems into steps (e.g., "first label the axes of 
 
 // Should we tell instructors to avoid mentioning autonomous? Or not??
 
-== AI Draft
 
-=== Strategy
+== Assessment note: Euler Quiz
 
-The week bootstraps off the population models from Weeks 1--2: add a death rate, let the rates
-depend on the population, and you are forced into a *system*. Lotka--Volterra is the excuse to study
-systems, and it becomes the canonical example for the next two weeks. Students shouldn't find the
-modelling hard by now; the new content is simulating and _visualizing_ two interacting quantities.
+It is worth having an Euler's method quiz before this week. This week is very modelling/simulation
+intensive, having a quiz at the start of the week will speed up class a great deal.
 
-Run an Euler's method quiz before this week. Simulating a system is the first exercise where a
-student without a working 1-d simulation is genuinely stuck.
-
-=== Vocabulary
-
-Say "a graph in component space" and "a graph in phase space". Avoid "phase plot" and "component
-graph"---the shorter names blur the distinction between the _space_ and a _graph drawn in it_, and
-that distinction is exactly what students are struggling to build. Correct yourself in front of the
-class when you slip; it advertises that the wording is deliberate.
-
-We suggest *not* introducing the word "autonomous" this week. It isn't needed for anything we do,
-and it competes for attention with component/phase space. If you do want it, put it in a tutorial or
-homework, and define it properly---students who half-remember it will later apply "set the
-derivative to zero" to non-autonomous equations. (This is a judgement call; instructors have
-disagreed.)
-
-=== Running the exercises
-
-- *Step size.* Some students will simulate the fox--rabbit system once per year. Ask them whether
-  they believe populations should be checked annually. Push both arguments: smaller is always
-  better, _and_ the units of $t$ should sound reasonable for the situation being modelled.
-- `#N/A` and absurd numbers mean numerical instability, not a broken spreadsheet. Tell them to
-  shrink the step size.
-- Have students start a *blank* spreadsheet rather than editing an old one.
-- The "do the peaks get closer as $Delta$ shrinks?" parts are hard. Discuss the shape of the
-  solution first, establish a baseline, and then conclude with a model answer---this is the style of
-  argument you want on homework and exams.
-- Stay in component space until the phase space exercise. Introducing phase graphs early undercuts
-  the payoff.
-- Phase space is students' first chance to practice *reading a definition on their own*. Name that
-  skill when you assign it.
-
-=== How other texts frame this
-
-Our *phase space* is standard: Wiggins opens his book with "the (vector) space of dependent
-variables is referred to as the phase space of the ODE", and Blanchard calls the $R F$-plane the
-phase plane. What is ours alone is *component space*---no text names the other picture, which is
-part of why students never learn to tell them apart.
-
-The technique the other texts have and we do not is *nullclines*: draw the curves
-$d x slash d t = 0$ and $d y slash d t = 0$, mark the vertical and horizontal crossings on them,
-and read off the sign of each derivative in the regions between. Judson and Blanchard both build
-their hand-drawn phase-plane work on it, and equilibria fall out as the intersections. We get the
-same information from simulation and the phase portrait instead. If a student arrives already
-knowing nullclines, that is compatible with everything we do---but do not introduce them here, or
-the phase-portrait payoff in Week 5 lands early and weakly.
-
-On the rates-versus-amounts confusion: Trench heads it off notationally, writing $P' = a(P) P$ and
-saying in words that $a$ is "the rate of change of population per unit time *per individual*."
-Saying "per individual" out loud costs nothing and is worth doing.
 
 == Education literature
 
-*The instructor note about $B$ and $D$ being confused with counts is a
-documented, predictable phenomenon, not a local observation.*
-#cite(<rowland2004interpretations>, form: "prose") gave 44 students a diagnostic
-quiz: *20 of them (45%) used amount-type thinking on both questions,* and only
-eight got both right. Asked what the constant term in a drug-infusion model
-meant, students called it an initial amount, a maximum, or an equilibrium
-amount --- anything but a rate.
-
-The same paper reports interviews on units: five of eight students gave
-$d D slash d t$ the units mg/h while giving the constant term the units mg; two
-of those five noticed the inconsistency but could not resolve it, and two others
-"explicitly stated their belief that the units did not have to be consistent."
-The follow-up study @rowland2006units quantifies the spread: of 42 students who
-described a term as some sort of "rate", only eight gave it rate units.
-
-Two consequences for this week. Asking for the units of every term is not
-pedantry, it is the diagnostic. And the students who cannot do it are unlikely to
-volunteer that fact, so ask the whole room rather than waiting for a hand.
-
-#cite(<naranjo2024sophisticated>, form: "prose") analyse how students set up
-differential equations for physical contexts and argue that flexibility across
-several set-up strategies predicts success --- relevant if you extend the
-modelling here.
+#cite(<karimifardinpour2018comparing>, form: "prose") examine the difficulties that students have
+coordinating between phase portraits and graphs in component space in one dimension. #cite(
+  <trigueros2000>,
+  form: "prose",
+) conducted student interviews and found that the students "were not able to see it as a
+representation of the state of an autonomous system at a particular time _even when they were able
+to solve the system_". They further concluded that fluency with slope fields for one-dimensional
+models did not transfer to multi-dimensional models.
 
 === References
 

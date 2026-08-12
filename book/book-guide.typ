@@ -58,7 +58,7 @@
 }
 
 #{
-  module(title: [Qualitative Analysis: Slope Fields and Phase Portraits])[
+  module(title: [Qualitative Analysis: Slope Fields and Phase Portraits], label: <mod:phase-portraits>)[
     #include "modules/module-05-body.typ"
   ]
   include "modules/module-05-exercises.typ"
@@ -92,7 +92,7 @@
 }
 
 #{
-  module(title: [Quantitative Analysis: Linearization])[
+  module(title: [Quantitative Analysis: Linearization], label: <mod:linearization>)[
     #include "modules/module-09-body.typ"
   ]
   include "modules/module-09-exercises.typ"

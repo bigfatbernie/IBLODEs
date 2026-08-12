@@ -8,7 +8,7 @@
 #{
   lesson(title: [Phase Portraits], include "lesson-week-05.typ", label: <lesson:5>)
   book_only(pagebreak())
-  question({
+  question(label: <ex:3d_slope_field>, {
     learning_objectives(
       [Identify equilibrium solutions to systems of differential equations in (joint) component
         space.],

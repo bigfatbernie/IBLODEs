@@ -40,7 +40,7 @@ like "$f(x) approx f(a) + f'(a)(x-a)$". However, we want to focus on the form
 Set expectations: students should be able to go from a blank spreadsheet to a working simulation in
 under five minutes. Having an Euler Quiz will help reinforce this expectation.
 
-=== Euler Quiz
+=== Assessment note: Euler Quiz
 
 Since Euler's method is so fundamental to the course, it is worth having an Euler's method quiz
 after this week. The format of the quiz is: here is a basic model described by a differential
