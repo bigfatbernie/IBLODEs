@@ -52,7 +52,7 @@
   }
 
 
-  question(
+  question(label:<ex:spring_mass>,
     slide(force_scale: 0.90em)[
 
 
