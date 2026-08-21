@@ -70,7 +70,7 @@ $
   ("# Aphids") (0.25) & approx 100 + 0.25 dot (-45) = 88.75
 $
 #let t_max = 1.75
-We can now repeat this processes at $t=0.25$ to find approximate values for the number of ants and
+We can now repeat this process at $t=0.25$ to find approximate values for the number of ants and
 aphids at $t=0.5$, etc.. Repeating until $t=#(t_max)$, we arrive at the following table of values:
 
 // #align(
@@ -151,7 +151,7 @@ The graph below shows the simulated Ant and Aphid populations over time.
 
 #let _Delta2 = 0.05
 Of course, if we wanted a more accurate simulation, we could use a smaller step size. Below is a
-graph using a step size of $Delta = #(_Delta2)$, The new, more accurate estimates are shown (solid
+graph using a step size of $Delta = #(_Delta2)$. The new, more accurate estimates are shown (solid
 and dashed) along with the old estimates (dotted).
 
 #let steps2 = calc.ceil(t_max / _Delta2)

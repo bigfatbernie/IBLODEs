@@ -51,19 +51,19 @@ equations as well.
 
 Consider the system
 $
-  x' & = 2 x + y \
-  y' & = x + 2 y
+  x' & = 3 x + 2 y \
+  y' & = 2 x
 $
 We can rewrite this system as a matrix equation:
 $
-  mat(x'; y') = mat(2, 1; 1, 2) mat(x; y)
+  mat(x'; y') = mat(3, 2; 2, 0) mat(x; y)
 $
 
 We can further refine our matrix equation by introducing a function $arrow(r)(t)=mat(x(t); y(t))$.
 Since the derivative of a multivariable function is the derivative of each of its coordinates,
 $arrow(r)'(t)=mat(x'(t); y'(t))$, and so the system can be rewritten as
 $
-  arrow(r)' = mat(2, 1; 1, 2) arrow(r).
+  arrow(r)' = mat(3, 2; 2, 0) arrow(r).
 $
 
 Differential equations written in this way are said to be expressed in _matrix form_.
@@ -72,7 +72,7 @@ Differential equations written in this way are said to be expressed in _matrix f
 
 === Eigenvectors and Guessing Solutions
 
-The equation $arrow(r)'=mat(2, 1; 1, 2) arrow(r)$ looks a lot like our previous equation $y' = 7 y$,
+The equation $arrow(r)'=mat(3, 2; 2, 0) arrow(r)$ looks a lot like our previous equation $y' = 7 y$,
 so we might get lucky and be able to guess a solution!
 
 Let's start by guessing a solution of the form
@@ -83,20 +83,20 @@ where $A,B, k in RR$ are parameters. This implies
 $
   arrow(r)'(t) = mat(k A e^(k t); k B e^(k t)) = k mat(A e^(k t); B e^(k t)) = k space.thin arrow(r)(t).
 $
-From the original differential equation, we know $arrow(r)'=mat(2, 1; 1, 2)arrow(r)$. Combining this
+From the original differential equation, we know $arrow(r)'=mat(3, 2; 2, 0)arrow(r)$. Combining this
 with our previous computation gives us
 $
-  arrow(r)' = mat(2, 1; 1, 2) arrow(r) = k space.thin arrow(r).
+  arrow(r)' = mat(3, 2; 2, 0) arrow(r) = k space.thin arrow(r).
 $
-In other words, $arrow(r)$ must be an eigenvector of $mat(2, 1; 1, 2)$ with eigenvalue $k$!
+In other words, $arrow(r)$ must be an eigenvector of $mat(3, 2; 2, 0)$ with eigenvalue $k$!
 
-Computing, we see the eigenvectors of $mat(2, 1; 1, 2)$ are
+Computing, we see the eigenvectors of $mat(3, 2; 2, 0)$ are
 $
-  arrow(v_1) = mat(1; 1) " with eigenvalue " 3 wide "and" wide arrow(v_2) = mat(1; -1) " with eigenvalue " 1.
+  arrow(v_1) = mat(2; 1) " with eigenvalue " 4 wide "and" wide arrow(v_2) = mat(1; -2) " with eigenvalue " (-1).
 $
 Thus we guess solutions
 $
-  arrow(r_1)(t) = mat(1; 1) e^(3 t) = mat(e^(3 t); e^(3 t)) wide "and" wide arrow(r_2)(t) = mat(1; -1) e^(t) = mat(e^(t); -e^(t)).
+  arrow(r_1)(t) = mat(2; 1) e^(4 t) = mat(2 e^(4 t); e^(4 t)) wide "and" wide arrow(r_2)(t) = mat(1; -2) e^(-t) = mat(e^(-t); -2 e^(-t)).
 $
 
 Verifying, we see that both $arrow(r_1)$ and $arrow(r_2)$ are solutions!
@@ -106,17 +106,17 @@ Verifying, we see that both $arrow(r_1)$ and $arrow(r_2)$ are solutions!
 
 Recall the system of differential equations
 $
-  x' = 2 x + y \
-  y' = x + 2 y
+  x' = 3 x + 2 y \
+  y' = 2 x
 $
 expressed in matrix form as
 $
-  arrow(r)' = mat(2, 1; 1, 2) arrow(r)
+  arrow(r)' = mat(3, 2; 2, 0) arrow(r)
 $
 where $arrow(r)(t) = mat(x(t); y(t))$. By guessing and checking, we found two solutions
 $
-  arrow(r_1)(t) = e^(3 t) mat(1; 1) wide "and" wide
-  arrow(r_2)(t) = e^(-t) mat(1; -1).
+  arrow(r_1)(t) = e^(4 t) mat(2; 1) wide "and" wide
+  arrow(r_2)(t) = e^(-t) mat(1; -2).
 $
 But, are there others?
 
@@ -124,21 +124,21 @@ In the case of the single-variable equation $y'=7y$, multiplying a solution by a
 another solution. Will the same work in this case? Let's try.
 
 #example(
-  prompt: [Consider $arrow(r)_1(t)=e^(3t)mat(1; 1)$ and $arrow(r)_2(t)=e^(-t)mat(1; -1)$, which are
-    solutions to $arrow(r)' = mat(2, 1; 1, 2)arrow(r)$. Determine whether
+  prompt: [Consider $arrow(r)_1(t)=e^(4t)mat(2; 1)$ and $arrow(r)_2(t)=e^(-t)mat(1; -2)$, which are
+    solutions to $arrow(r)' = mat(3, 2; 2, 0)arrow(r)$. Determine whether
     $alpha space.thin arrow(r)_1$ and $beta space.thin arrow(r)_2$ are also solutions, where
     $alpha, beta in RR$ are constants.],
   [
     We can test if something is a solution to a differential equation by plugging it in. On the one
     hand, we have
     $
-      (alpha space.thin arrow(r)_1(t))' = alpha space.thin arrow(r)'_1(t) = alpha space.thin 3 space.thin arrow(r)_1(t) .
+      (alpha space.thin arrow(r)_1(t))' = alpha space.thin arrow(r)'_1(t) = alpha space.thin 4 space.thin arrow(r)_1(t) .
     $
     On the other hand, we have
     $
-      mat(2, 1; 1, 2) (alpha space.thin arrow(r)_1(t)) = alpha mat(2, 1; 1, 2) arrow(r)_1(t) = alpha space.thin 3 space.thin arrow(r)_1(t),
+      mat(3, 2; 2, 0) (alpha space.thin arrow(r)_1(t)) = alpha mat(3, 2; 2, 0) arrow(r)_1(t) = alpha space.thin 4 space.thin arrow(r)_1(t),
     $
-    and so $(alpha space.thin arrow(r)_1(t))' = mat(2, 1; 1, 2) (alpha space.thin arrow(r)_1(t))$,
+    and so $(alpha space.thin arrow(r)_1(t))' = mat(3, 2; 2, 0) (alpha space.thin arrow(r)_1(t))$,
     showing that $alpha space.thin arrow(r)_1(t)$ is a solution no matter the value of $alpha$. A
     similar computation shows that $beta space.thin arrow(r)_2(t)$ is a solution for any value of
     $beta$.
@@ -177,10 +177,10 @@ and so $alpha space.thin arrow(s)_1 + beta space.thin arrow(s)_2$ is also a solu
 #v(1em)
 
 Given the above theorem, we can find all sorts of solutions to
-$arrow(r)'(t) = mat(2, 1; 1, 2) arrow(r)(t)$, like
+$arrow(r)'(t) = mat(3, 2; 2, 0) arrow(r)(t)$, like
 $
-  arrow(r)_1(t) + 4 space.thin arrow(r)_2(t) = mat(e^(3 t) + 4space.thin e^(t); e^(3 t) - 4space.thin e^(t)) wide "or" wide
-  -2 space.thin arrow(r)_1(t) + 3 space.thin arrow(r)_2(t) = mat(-2space.thin e^(3 t) + 3space.thin e^(t); -2space.thin e^(3 t) - 3space.thin e^(t)).
+  arrow(r)_1(t) + 4 space.thin arrow(r)_2(t) = mat(2space.thin e^(4 t) + 4space.thin e^(-t); e^(4 t) - 8space.thin e^(-t)) wide "or" wide
+  -2 space.thin arrow(r)_1(t) + 3 space.thin arrow(r)_2(t) = mat(-4space.thin e^(4 t) + 3space.thin e^(-t); -2space.thin e^(4 t) - 6space.thin e^(-t)).
 $
 
 But, have we found all the solutions? To answer that question we need to dive deeper into the linear
@@ -188,7 +188,7 @@ algebra of the solution space.
 
 == Linear Algebra of the Solution Space
 
-You're familiar with the vector spaces $RR^n$ where $n=1,2,$ etc., but the set of all function from
+You're familiar with the vector spaces $RR^n$ where $n=1,2,$ etc., but the set of all functions from
 $RR$ to $RR^n$, denoted $cal(F)^n$, also forms a vector space. To quickly check, notice that the
 constant function $z(t)=arrow(0)$ acts like the "zero vector", and if $f:RR arrow RR^n$ and
 $g:RR arrow RR^n$ are functions, then so is $alpha dot f + beta dot g$.#footnote([
@@ -246,10 +246,10 @@ Algebra definitions of subspace, basis, and dimension to $cal(F)^n$.
 === Dimension of the Solution Space
 
 So far, we have established that solutions to a matrix differential equation form a subspace, and as
-a subspace space, they must have a dimension.#footnote[This is a powerful theorem coming from
-  abstract Linear Algebra and relying on the axiom of choice. We will just accept this theorem as
-  fact.] Our next goal will be to establish the dimension of the solution space to a matrix
-differential equation and then to find a general solution.
+a subspace, they must have a dimension.#footnote[This is a powerful theorem coming from abstract
+  Linear Algebra and relying on the axiom of choice. We will just accept this theorem as fact.] Our
+next goal will be to establish the dimension of the solution space to a matrix differential equation
+and then to find a general solution.
 
 The following theorem will give us a place to start.
 
@@ -347,7 +347,7 @@ $
   dim(cal(S)) >= "# linearly independent eigenvectors of" M.
 $
 
-Thus, if $M$ has $n$ linearly independent eigenvectors (i.e., if $M$ is diagnoalizable), then
+Thus, if $M$ has $n$ linearly independent eigenvectors (i.e., if $M$ is diagonalizable), then
 $
   dim(cal(S)) >= n.
 $
@@ -366,7 +366,7 @@ Combined with our previous result, we now have the following theorem.
 
 In this text, we will only consider matrix differential equations where the matrix is
 diagonalizable, but the above theorem also holds when $M$ is _not_ diagonalizable. The proof relies
-on finding a basis of solutions, some of which are not eigen solutions, though the study of _Jordan
+on finding a basis of solutions, some of which are not eigen solutions, through the study of _Jordan
 forms_. In this text we do not worry about the general solution to non-diagonalizable matrix
 equations.
 
@@ -379,58 +379,58 @@ _every solution_ can be expressed as a linear combination of the eigen solutions
 
 #example(prompt: [Find all solutions of the system of differential equations], [
   $
-    (dif x) / (dif t) & = 2 x(t) + y(t) \
-    (dif y) / (dif t) & = x(t) + 2 y(t)
+    (dif x) / (dif t) & = 3 x(t) + 2 y(t) \
+    (dif y) / (dif t) & = 2 x(t)
   $
 
   We can write this system in matrix form as:
   $
     mat((dif x) / (dif t); (dif y) / (dif t))
-    = mat(2, 1; 1, 2) mat(x; y)
+    = mat(3, 2; 2, 0) mat(x; y)
   $
-  and if we let $arrow(r)(t) = mat(x(t); y(t))$ and $M = mat(2, 1; 1, 2)$, we can write the system
+  and if we let $arrow(r)(t) = mat(x(t); y(t))$ and $M = mat(3, 2; 2, 0)$, we can write the system
   as
   $
     (dif arrow(r)) / (dif t) = M arrow(r).
   $
 
   We can find the eigenvalues and eigenvectors of the matrix $M$:
-  - $lambda_1 = 3$ with eigenvector $arrow(v_1) = mat(1; 1),$
+  - $lambda_1 = 4$ with eigenvector $arrow(v_1) = mat(2; 1),$
 
-  - $lambda_2 = 1$ with eigenvector $arrow(v_2) = mat(1; -1).$
+  - $lambda_2 = -1$ with eigenvector $arrow(v_2) = mat(1; -2).$
 
   We can now write the eigen solutions of the system of differential equations:
   $
-    arrow(r_1)(t) & = arrow(v_1) e^(3 t) = mat(1; 1) e^(3 t), \
-    arrow(r_2)(t) & = arrow(v_2) e^(1 t) = mat(1; -1) e^(1 t).
+    arrow(r_1)(t) & = arrow(v_1) e^(4 t) = mat(2; 1) e^(4 t), \
+    arrow(r_2)(t) & = arrow(v_2) e^(-t) = mat(1; -2) e^(-t).
   $
 
   Linear combination of these two solutions form general solution:
   $
-    arrow(r)(t) = A mat(1; 1) e^(3 t) + B mat(1; -1) e^(1 t),
+    arrow(r)(t) = A mat(2; 1) e^(4 t) + B mat(1; -2) e^(-t),
   $
   where $A$ and $B$ are parameters.
 ])
 
 #example(
-  prompt: [Find the solution to $arrow(r)'=mat(2, 1; 1, 2)arrow(r)$ that satisfies
+  prompt: [Find the solution to $arrow(r)'=mat(3, 2; 2, 0)arrow(r)$ that satisfies
     $arrow(r)(0) = mat(1; 0)$.],
   [
-    We already found the general solution to $arrow(r)'=mat(2, 1; 1, 2)arrow(r)$:
+    We already found the general solution to $arrow(r)'=mat(3, 2; 2, 0)arrow(r)$:
     $
-      arrow(r)(t) = A mat(1; 1) e^(3 t) + B mat(1; -1) e^(1 t),
+      arrow(r)(t) = A mat(2; 1) e^(4 t) + B mat(1; -2) e^(-t),
     $
     where $A$ and $B$ are parameters.
 
     Since we require $arrow(r)(0)=mat(1; 0)$, we can solve
     $
-      arrow(r)(0) & = A mat(1; 1) e^(3 (0)) + B mat(1; -1) e^(1 (0)) \
-                  & = mat(1; 0) = A mat(1; 1) + B mat(1; -1)
+      arrow(r)(0) & = A mat(2; 1) e^(4 (0)) + B mat(1; -2) e^(-(0)) \
+                  & = mat(1; 0) = A mat(2; 1) + B mat(1; -2)
     $
-    to get $A= 1 / 2$ and $B= 1 / 2$. Thus the solution that satisfies the initial condition is:
+    to get $A= 2 / 5$ and $B= 1 / 5$. Thus the solution that satisfies the initial condition is:
     $
-      arrow(r)(t) & = inline(1 / 2) mat(1; 1) e^(3 t) + inline(1 / 2) mat(1; -1) e^(1 t) \
-                  & = inline(1 / 2) mat(e^(3t) + e^t; e^(3t) - e^t).
+      arrow(r)(t) & = inline(2 / 5) mat(2; 1) e^(4 t) + inline(1 / 5) mat(1; -2) e^(-t) \
+                  & = inline(1 / 5) mat(4 e^(4t) + e^(-t); 2 e^(4t) - 2 e^(-t)).
     $
   ],
 )
@@ -443,23 +443,23 @@ $
 $
 where $lambda$ is an eigenvalue of the coefficient matrix $M$ and $arrow(v)$ is a corresponding
 eigenvector. When graphed in phase space, this eigen solution will look like the set of positive
-multiples of $arrow(v)$. More specifically, it is will look like a straight half-line kissing the
+multiples of $arrow(v)$. More specifically, it will look like a straight half-line kissing the
 origin.
 
 #{
-  let F(x, y) = (2 * x + y, x)
-  let soln = solve_2d_ivp(F, (.4145, -1), 100, Delta: .1, method: "rk4")
-  let soln2 = solve_2d_ivp(F, (-.414, 1), 100, Delta: .1, method: "rk4")
+  let F(x, y) = (3 * x + 2 * y, 2 * x)
+  let soln = solve_2d_ivp(F, (.502, -1), 100, Delta: .1, method: "rk4")
+  let soln2 = solve_2d_ivp(F, (-.498, 1), 100, Delta: .1, method: "rk4")
 
   let diag = lq.diagram(
-    title: [Solutions to $arrow(r)'=mat(2, 1; 1, 0)arrow(r)$ in Phase Space],
+    title: [Solutions to $arrow(r)'=mat(3, 2; 2, 0)arrow(r)$ in Phase Space],
     width: 5cm,
     height: 5cm,
     xlim: (-1, 1),
     ylim: (-1, 1),
     yaxis: (position: 0, tip: tiptoe.stealth, filter: ((v, d) => false)),
     xaxis: (position: 0, tip: tiptoe.stealth, filter: ((v, d) => false)),
-    lq.line((0, 0), (1 + calc.sqrt(2), 1), stroke: (paint: blue, dash: (4pt, 1pt))),
+    lq.line((0, 0), (2, 1), stroke: (paint: blue, dash: (4pt, 1pt))),
     lq.plot(
       soln.map(((x, y)) => calc.clamp(x, -2, 2)),
       soln.map(((x, y)) => calc.clamp(y, -2, 2)),
@@ -483,10 +483,9 @@ The converse also holds: solutions whose graphs in phase space are straight line
 away from the origin are eigen solutions.
 
 #{
-  let F(x, y) = (2 * x + y, x)
-  let soln = solve_2d_ivp(F, (.4145, -1), 100, Delta: .1, method: "rk4")
-  let soln2 = solve_2d_ivp(F, (-.414, 1), 100, Delta: .1, method: "rk4")
-
+  let F(x, y) = (3 * x + 2 * y, 2 * x)
+  let soln = solve_2d_ivp(F, (.502, -1), 100, Delta: .1, method: "rk4")
+  let soln2 = solve_2d_ivp(F, (-.498, 1), 100, Delta: .1, method: "rk4")
 
   let diag = vector_field(
     F,
@@ -507,22 +506,22 @@ away from the origin are eigen solutions.
     spacing: (.15, .15),
     yaxis: (position: 0, tip: tiptoe.stealth, filter: ((v, d) => false)),
     xaxis: (position: 0, tip: tiptoe.stealth, filter: ((v, d) => false)),
-    lq.line((0, 0), (1 + calc.sqrt(2), 1), stroke: (
+    lq.line((0, 0), (2, 1), stroke: (
       paint: blue,
       dash: (4pt, 1pt),
       thickness: 1.5pt,
     )),
-    lq.line((0, 0), (1 - calc.sqrt(2), 1), stroke: (
+    lq.line((0, 0), (-1, 2), stroke: (
       paint: blue,
       dash: (4pt, 1pt),
       thickness: 1.5pt,
     )),
-    lq.line((0, 0), (-1 - calc.sqrt(2), -1), stroke: (
+    lq.line((0, 0), (-2, -1), stroke: (
       paint: blue,
       dash: (4pt, 1pt),
       thickness: 1.5pt,
     )),
-    lq.line((0, 0), (-1 + calc.sqrt(2), -1), stroke: (
+    lq.line((0, 0), (1, -2), stroke: (
       paint: blue,
       dash: (4pt, 1pt),
       thickness: 1.5pt,
@@ -537,9 +536,9 @@ away from the origin are eigen solutions.
   ))
 }
 
-Above is graphed a phase portrait for $arrow(r)'=mat(2, 1; 1, 0)arrow(r)$ along with graphs of the
+Above is graphed a phase portrait for $arrow(r)'=mat(3, 2; 2, 0)arrow(r)$ along with graphs of the
 eigen solutions (dashed lines). You can verify that the eigen solutions in phase space follow the
-trajectories of the eigen vectors of $mat(2, 1; 1, 0)$.
+trajectories of the eigen vectors of $mat(3, 2; 2, 0)$.
 
 
 === Stability of the Equilibrium Solutions
@@ -553,7 +552,7 @@ question:
 
 First note that if $arrow(s)$ is an equilibrium solution to $arrow(r)'=M arrow(r)$, then
 $arrow(s)'(t)=arrow(0)$ which implies $M arrow(s)=arrow(0)$. This means that if $M$ is invertible,
-the equation $arrow(r)'=M arrow(r)$ has a unique equilibrium solution: $arrow(s)'(t)=arrow(0)$.
+the equation $arrow(r)'=M arrow(r)$ has a unique equilibrium solution: $arrow(s)(t)=arrow(0)$.
 Further, all equilibrium solutions can be found by analyzing the null space of $M$.
 
 For illustration purposes, let us now consider a $2 times 2$ matrix $M$ with real and distinct

@@ -6,7 +6,7 @@
 #let OO = $upright(bold("O"))$
 
 #{
-  lesson(title: [Introduction to Equilibria & Stability], include "lesson-week-04.typ")
+  lesson(title: [Introduction to Equilibria & Stability], include "lesson-week-04.typ", label: <lesson:4>)
   question(label: <ex:LV_equilibrium>, {
     learning_objectives(
       [Find equilibrium solutions to a system of differential equations by numerical and graphical
@@ -530,7 +530,7 @@
           - If $0 < P(0) < 10$, solutions are "S"-shaped and increase toward $10$.
           - If $P(0) > 10$, solutions are "L"-shaped and decrease toward $10$.
           - If $P(0)=0$ or $P(0)=10$, the solutions are constant (horizontal lines).
-          - If $P(0)<0$, the differential equation still has a solution, that curve downward.
+          - If $P(0)<0$, the differential equation still has solutions (that curve downward).
 
           Only solutions with $P>=0$ make sense in the context of model $OO$.
         ]

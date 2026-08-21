@@ -171,17 +171,15 @@ existence business. It is quite possible that the solution only exists for a sho
 
     $ y' = y^2, quad y(0) = A. $],
   [
-    We know how to solve this equation. First assume that $A != 0$, so $y$ is not equal to zero at
-    least for some $x$ near 0. So $x' = 1 / y^2$, so $x = -1 / y + C$, so $y = 1 / (C - x)$. If
-    $y(0) = A$, then $C = 1 / A$ so
-
-    $ y = 1 / (1 / A - x). $
+    First assume that $A != 0$, so $y(x)$ is not equal to zero at
+    least for some $x$ near 0. In that region, the equation is separable
+    and has solution $ y = 1 / (C - x) $ for some constant $C$. 
+    We can solve for $C$ in terms of $A$ and find $C=1/A$ giving a final solution of $ y = 1 / (1/A - x). $
 
     If $A = 0$, then $y = 0$ is a solution.
 
-    For example, when $A = 1$ the solution "blows up" at $x = 1$. Hence, the solution does not exist
-    for all $x$ even if the equation is nice everywhere. The equation $y' = y^2$ certainly looks
-    nice.
+    Notice, however, that when $A != 0$, solutions "blow up" at $x = 1/A$. Hence, solutions do not exist for all $x$. 
+    Frustrating, coming from an equation that looks as nice as $y' = y^2$.
   ],
 )
 

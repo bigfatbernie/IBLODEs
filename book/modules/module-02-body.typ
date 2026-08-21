@@ -557,7 +557,7 @@ $Delta = "domain of approximation" / "# of tangent lines used"$.
 == Implementing Euler's Method
 
 As seen in the previous example, Euler's method can be efficiently implemented using a table. This
-processes is worth doing a few times by hand, but, in truth, it's what computers are made for.
+process is worth doing a few times by hand, but, in truth, it's what computers are made for.
 
 Though you can easily implement Euler's method using general purpose programming languages like
 Python, Matlab, etc., there is one type of software that excels#footnote[Pun intended.] at

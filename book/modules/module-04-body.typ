@@ -660,7 +660,7 @@ $
 $
 for $mu>0$.
 
-Solutions to this system all end up with oscillatory behaviour and they all have the same period.
+Solutions to this system all end up with oscillatory behaviour and they all have the same limiting period.
 Here solutions are not attracted to an equilibrium, but they are attracted towards a solution which
 is perfectly periodic (in this situation we say that the system has a _limit cycle_). The study of
 what behaviour solutions can be "attracted to" leads to concepts like fractals and chaos (advanced
@@ -694,7 +694,7 @@ In the above diagram you can see the oval-shaped limit cycle in the center to wh
 attracted.
 
 #example(
-  prompt: [Find an classify all equilibrium solutions to $y'=sin(y)$.],
+  prompt: [Find and classify all equilibrium solutions to $y'=sin(y)$.],
   [
     Since equilibrium solutions are constant solutions, we can solve for when $y'=0$ to find all
     equilibrium solutions. Solving,
@@ -711,7 +711,7 @@ attracted.
     so $y(t)$ will increase; i.e., solutions near $y(t)=0$ but above $y(t)=0$ will tend away from
     $y(t)=0$. This means that $y(t)=0$ is _unstable_. Now, suppose $y approx 0$ and $y < 0$. Then
     $ y' = sin("slightly smaller than" 0) < 0 $
-    and so $y(t)$ will be decreasing and move away from $0$. This means that $y(t)=0$ is is an
+    and so $y(t)$ will be decreasing and move away from $0$. This means that $y(t)=0$ is an
     unstable and _repelling_ equilibrium solution.
 
     Case $y(t)=pi$: Suppose that $y approx pi$ and that $y>pi$. Then

@@ -7,7 +7,7 @@
 #let infty = math.infinity
 
 #{
-  lesson(title: [The Introduction], include "lesson-week-01.typ")
+  lesson(title: [The Introduction], include "lesson-week-01.typ", label: <lesson:1>)
   question(label: <ex:intro_modelling>, {
     learning_objectives(
       [Recognize that modelling is an imperfect process and one must make choices when modelling.],
@@ -309,7 +309,11 @@
     ]
   })
 
-  lesson(title: [Differential Equations & Euler's Method], include "lesson-week-02.typ")
+  lesson(
+    title: [Differential Equations & Euler's Method],
+    include "lesson-week-02.typ",
+    label: <lesson:2>,
+  )
   book_only(pagebreak())
   question({
     learning_objectives(
@@ -517,7 +521,7 @@
         - $MM_1$: accuracy #sym.checkmark (by definition), explanatory #sym.checkmark (we can view
           this model as saying "the change in population is proportional to the current population",
           which directly relates to our original assumptions).
-        - $MM^*_1$: accuracy #sym.crossmark (matches $MM_1$ for a while), explanatory #sym.crossmark
+        - $MM^*_1$: accuracy #sym.checkmark (matches $MM_1$ for a while), explanatory #sym.crossmark
           (this model seemingly came out of nowhere).
         - $MM_infty$: accuracy #sym.crossmark (values aren't even close), explanatory #sym.checkmark
           (we can view this model as saying "the change in population is proportional to the current

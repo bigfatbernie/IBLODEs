@@ -22,11 +22,11 @@ Consider the following two situations:
   study the temperature of the rod at different places along its length.
 
 The first situation is one we're familiar with. It is modeled by an _initial value problem_. I.e.
-differential equations coupled with a set of values each functions should take on at a specific
+differential equations coupled with a set of values that each function should take on at a specific
 time/place/etc.
 
 The second situation is different. It is modeled by a _boundary value problem_. Here, we specify the
-values each functions should take on at _different_ times/places/etc.
+values that each function should take on at _different_ times/places/etc.
 
 // Consider the differential equation $u''(x) = -u(x)$. To specify an initial value problem, we might
 // ask for a solution where $u(1) = 0, u'(1) = -1$. To specify a _boundary value problem_, we might ask

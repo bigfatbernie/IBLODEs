@@ -390,12 +390,12 @@ systems.
   make_figure(approx_point: (10.5, 110.5))
 }
 
-In the figures, you can see that as the initial conditions get closer to $(F,R)=(10,110)$ (where we
+In the figures, you can see that as the initial conditions get closer to $(F,R)=(11,110)$ (where we
 centered our approximation), the solution to the linearized system (the solid curve) matches more
 and more closely to the solution to the original system (the dashed curve).#footnote[You might
-  wonder if the reduction in error is meaningful. Since as $(F,R) arrow (10, 110)$, solutions look
+  wonder if the reduction in error is meaningful. Since as $(F,R) arrow (11, 110)$, solutions look
   more and more constant, there is less oscillation overall when initial conditions are close to
-  $(10, 110)$. Thus, we would expect approximations (provided that they also oscillate less) to more
+  $(11, 110)$. Thus, we would expect approximations (provided that they also oscillate less) to more
   closely match the original system. This is certainly true and is an observation about _absolute
   error_. However, if you pay attention to the scale on the axes of the figures, you see that the
   _relative error_ is decreasing. That is, even if you zoom in (negating the lessening of
@@ -406,7 +406,7 @@ and more closely to the solution to the original system (the dashed curve).#foot
 For nice differential equations, linearization can be used to classify equilibrium solutions when
 the linearized system has an equilibrium that is *unstable or attracting*.
 
-#theorem(title: [Classification via Linearization], [
+#theorem(label: <thm:classification_via_linearization>, title: [Classification via Linearization], [
   Suppose $arrow(G): RR^n arrow RR^n$ is differentiable and consider the system of differential
   equations defined by #math.equation(
     block: true,
@@ -449,7 +449,7 @@ and #math.equation(
   $,
 )<eqNonLinAttracting>
 
-The both have an equilibrium solution $(x(t),y(t))=(0,0)$. Since @eqLinCircular can be rewritten as
+They both have an equilibrium solution $(x(t),y(t))=(0,0)$. Since @eqLinCircular can be rewritten as
 a matrix equation, we can solve it explicitly:
 
 #align(center, grid(
@@ -506,7 +506,7 @@ directly towards the origin, we can use linear algebra to find the component of
 $mat(x'_"nonlin"; y'_"nonlin")=mat(-y - x^3; x)$ that points in the direction of $mat(-x; -y)$.
 After computing, we see
 $
-  mat(x'_"nonlin"; y'_"nonlin") = (x^4) / sqrt(x^2+y^2)mat(-x; -y) + (y x^3 + x^2+y^2) / sqrt(x^2+y^2) mat(-y; x),
+  mat(x'_"nonlin"; y'_"nonlin") = (x^4) / (x^2+y^2)mat(-x; -y) + (y x^3 + x^2+y^2) / (x^2+y^2) mat(-y; x),
 $
 and so, as long as $x != 0$, the vector $mat(x'_"nonlin"; y'_"nonlin")$ points slightly towards the
 origin (and never points away from the origin). Since $x=0$ and $y != 0$ is not an equilibrium
@@ -639,6 +639,6 @@ solutions are very close, but as $t$ increases, the solutions drift apart.
 
 While the nature of the solutions doesn't change (they are both periodic), when $t$ is large, they
 no longer follow each other closely. This phenomenon is called _drift_ and while it doesn't happen
-in all situation, it is something to watch out for when modelling and approximating in the real
+in all situations, it is something to watch out for when modelling and approximating in the real
 world!
 

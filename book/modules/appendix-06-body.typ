@@ -6,7 +6,7 @@
 
 
 
-You can find a comprehensive review of linear algebra the book _Linear Algebra_ by Jason Siefken. A
+You can find a comprehensive review of linear algebra in the book _Linear Algebra_ by Jason Siefken. A
 free copy is accessible at
 #align(center, link("https://siefkenj.github.io/IBLLinearAlgebra"))
 
@@ -380,4 +380,4 @@ The columns of $M$ are linearly _dependent_, even if they don't appear to be. Yo
 subtracting $(1+i) dot "row"_1$ from $"row"_2$ to arrive at the matrix $mat(1, i; 0, 0)$.
 
 The moral of the story is, when dealing with matrices with complex entries, follow the algorithms
-and you won't be lead astray.
+and you won't be led astray.

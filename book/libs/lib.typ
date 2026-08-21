@@ -12,5 +12,6 @@
 #import "utils.typ": aligned_terms, simple_table
 #import "allow-missing-refs.typ": allow_missing_refs
 #import "graphics/graphics.typ": draw_vec, slope_field, vector_field
+#import "graphics/graphics3d.typ": slope_field_3d
 #import "graphics/spreadsheet.typ": draw_spreadsheet
 #import "numerics/ode_solvers.typ": solve_1d_ivp, solve_2d_ivp

@@ -8,7 +8,7 @@
 
 In this appendix#footnote[Special thanks to Rhupert Ashmore-Sharpe for authoring the bulk of this
   appendix.] you will learn:
-- What a complex numbers is,
+- What is a complex number,
 - The geometry of complex numbers, and
 - The basics of manipulating complex numbers.
 
@@ -399,7 +399,7 @@ example, take $z = 2 + 2 i$ and its complex conjugate $macron(z) = 2 - 2 i$.
       content(
         (2.2, -2),
         anchor: "west",
-        $macron(z) = -2 + i$,
+        $macron(z) = 2 - 2i$,
       )
       line(
         (0, 0),
@@ -459,7 +459,7 @@ $
 $
 
 We call $theta$ the *argument* of $z$ and write $theta = arg(z)$. The number $r$ is usually
-positive, but is is not required to be. When it is positive, it is equal to $abs(z)$.
+positive, but is not required to be. When it is positive, it is equal to $abs(z)$.
 
 #{
   import "@preview/cetz:0.4.0"
@@ -569,7 +569,7 @@ positive, but is is not required to be. When it is positive, it is equal to $abs
 //  ]
 //]
 
-_Euler's formula_ gives a valuable connection between a complex numbers and complex exponentials,
+_Euler's formula_ gives a valuable connection between a complex number and complex exponentials,
 and it's closely related to polar form.
 
 #show_def("eulers_formula")
@@ -585,7 +585,7 @@ $
   z_1 z_2 = r_1 r_2 e^(i (theta_1 + theta_2)) .
 $
 
-This shows that when two complex numbers are multiplied, their angles are added adn their moduli are
+This shows that when two complex numbers are multiplied, their angles are added and their moduli are
 multiplied. (If $theta = 0$ or $pi$, then the complex number is real; test your intuition to make
 sure this formula does what you think for real numbers.)
 
@@ -606,7 +606,7 @@ solution.
   [
     Using the quadratic formula, we have #h(1fr)
     $
-      x = (-6 plus.minus sqrt(1^2 - 4 dot 1 dot 2)) / (2 dot 1) = (-6 plus.minus sqrt(-7)) / 2 = -3 plus.minus sqrt(7) / 2 i.
+      x = (-1 plus.minus sqrt(1^2 - 4 dot 1 dot 2)) / (2 dot 1) = (-1 plus.minus sqrt(-7)) / 2 = -1/2 plus.minus sqrt(7) / 2 i.
     $
   ],
 )
@@ -624,14 +624,14 @@ Because of the Fundamental Theorem of Algebra, complex numbers are useful in sit
 polynomials, like eigenvalue/eigenvector problems in linear algebra.
 
 #example(
-  prompt: [Find all eigenvalues and eigenvectors of $M=mat(0, -1; 1, 0)$],
+  prompt: [Find all eigenvalues and eigenvectors of $M=mat(0, -1; 1, 0)$.],
   [
     Computing $det(M- lambda I) = lambda^2+1=0$, we see the eigenvalues of $M$ are
     $lambda=plus.minus i$.
 
     To find the eigenvectors corresponding to $lambda =i$, we compute
     $
-      "null"(M- i I) = "null"(mat(-i, -1; -1, -i)) = "span"{mat(1; -i)}.
+      "null"(M- i I) = "null"(mat(-i, -1; 1, -i)) = "span"{mat(1; -i)}.
     $
     Thus, the eigenvectors corresponding to $lambda = i$ are non-zero multiples of $mat(1; -i)$.
 
@@ -641,6 +641,6 @@ polynomials, like eigenvalue/eigenvector problems in linear algebra.
 )
 
 Note, when dealing with complex matrices, it can be more difficult to spot by eye when two vectors
-are linearly dependent. For example, ${mat(-2; -1), mat(-1, -2)}$ is a linearly _independent_, but
-the set ${mat(-i; -1), mat(-1; -i)}$ is linearly _dependent_. (Verify this yourself by row
+are linearly dependent. For example, the set ${mat(-2; -1), mat(-1; 2)}$ is linearly _independent_, but
+the set ${mat(-i; -1), mat(-1; i)}$ is linearly _dependent_. (Verify this yourself by row
 reducing!)

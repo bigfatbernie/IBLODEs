@@ -31,7 +31,7 @@ no longer a subspace!
   ],
 )
 
-The issue is that $arrow(r)'=M arrow(r) + arrow(b)$ is no loner a matrix equation, it is an _affine
+The issue is that $arrow(r)'=M arrow(r) + arrow(b)$ is no longer a matrix equation, it is an _affine
 equation_. Affine equations are matrix equations plus a vector of constants. We will soon see how to
 compensate for the extra "$+ space.thin arrow(b)$".
 

@@ -6,9 +6,9 @@
 #let OO = $upright(bold("O"))$
 
 #{
-  lesson(title: [Phase Portraits], include "lesson-week-05.typ")
+  lesson(title: [Phase Portraits], include "lesson-week-05.typ", label: <lesson:5>)
   book_only(pagebreak())
-  question({
+  question(label: <ex:3d_slope_field>, {
     learning_objectives(
       [Identify equilibrium solutions to systems of differential equations in (joint) component
         space.],
@@ -32,7 +32,21 @@
       #align(
         center,
         block(breakable: false)[
-          #image("../images/slope-field-3d.png", width: 2in)
+          // #image("../images/slope-field-3d.png", width: 2in)
+
+          #let F(x, y) = ((0.01 * y - 1.1) * x, (1.1 - 0.1 * x) * y)
+
+          #slope_field_3d(
+            (x, y, z) => (..F(x, y), 1),
+            xlim: (0, 30),
+            ylim: (0, 300),
+            zlim: (0, 1.55),
+            spacing: (3.333333, 33.333333, 0.3775),
+            width: 1.7in,
+            segment_length: 0.66,
+            shade: 0.7,
+            view_direction: (0.491, -0.699, 0.520),
+          )
 
           #v(-7pt)
           #link("https://www.desmos.com/3d/kvyztvmp0g")
@@ -63,7 +77,6 @@
 
     ]
   })
-
 
   book_only(pagebreak())
   question({
@@ -148,7 +161,7 @@
         #solution[
           $(0,0)$ is unstable and not repelling. $(11,110)$ appears stable. It is hard to tell from
           the phase portrait whether it is attracting or very subtly repelling, but our analysis in
-          @ex:intro_to_phase_space shows that it stable (and not attracting).
+          @ex:intro_to_phase_space shows that it is stable (and not attracting).
         ]
       + #label_question_part(<ex:put_data_in_phase_portrait>) Copy and paste data from your
         simulation spreadsheet into the Desmos plot. Does the resulting curve fit with the picture?
@@ -160,7 +173,6 @@
 
     ]
   })
-
 
   book_only(pagebreak())
   question(label: <ex:exploring_equilibria>, {
@@ -363,7 +375,6 @@
     ]
   })
 
-
   book_only(pagebreak())
   question({
     learning_objectives(
@@ -484,7 +495,7 @@
         A'(t) & = -0.3 dot.c (H(t))^2 + A(t)
       $
 
-      and $0 lt.eq b lt.eq 2$.
+      and $0 < b lt.eq 2$.
 
       #slides_only(colbreak())
 
@@ -500,7 +511,7 @@
             X(x,y)=0.3 dot y - b dot x \
             Y(x,y)=-0.3 dot x^2 + y
           $
-          and set the bounds of the slider for $b$ to be $0 <= b <= 2$.
+          and set the bounds of the slider for $b$ to be $0 < b <= 2$.
         ]
       + What do equilibrium solutions mean in terms of tree growth?
         #solution[
@@ -517,7 +528,6 @@
 
     ]
   })
-
 
   book_only(pagebreak())
   question(label: <ex:tree_modelling_with_spreadsheet>, {
@@ -555,7 +565,7 @@
             A'(t) & = -0.3 dot.c (H(t))^2 + A(t)
           $
 
-          and $0 lt.eq b lt.eq 2$.
+          and $0 < b lt.eq 2$.
         ],
       )
 
@@ -632,7 +642,7 @@
           the phase portrait, we see that the leaf area will decrease to $0$ (and then the tree will
           die).
 
-          This happens no matter the value of $b in [0,2]$.
+          This happens no matter the value of $b in (0,2]$.
         ]
       + #label_question_part(<ex:sim_tree_10_10>) What will happen to a tree with
         $(H(0), A(0))=(10,10)$? Does this depend on $b$?
@@ -647,7 +657,6 @@
 
     ]
   })
-
 
   book_only(pagebreak())
   question({
@@ -725,7 +734,6 @@
     ]
   })
 
-
   book_only(pagebreak())
   question({
     learning_objectives(
@@ -733,7 +741,27 @@
       [Study the stability of equilibrium solutions.],
       [Explain the consequences of stable/unstable equilibrium for a model.],
     )
-    notes[???]
+    notes[
+      We are motivating:
+      - The importance/relevance of equilibrium solutions.
+      - The need for formal methods (beyond graphical inspection) for classifying equilibria.
+
+      At the moment, we can find equilibrium solutions by solving equations, but to classify them as
+      stable/unstable, we rely on visualizations and simulation. The conclusion of this question is:
+      _we need better tools for classifying equilibria_.
+
+      - In @ex:tree_model_part3[], we solve for the equilibrium solutions when $b=1$. We're doing it
+        generally now.
+      - In @ex:tree_model_live_forever[], students need to interpret what stable/unstable means in
+        the "real world". The $(0,0)$ equilibrium doesn't count as the tree "living". It needs
+        positive height/leaf area to be considered alive.
+
+        Students may struggle with converting "if the wind blows..." into mathematics. One way to
+        assist is to prompt students: "If the tree is at the equilibrium, and then a few leaves blow
+        off, where in phase space will the tree be? What happens to the tree from that point on?"
+
+      - @ex:tree_model_b5[] and @ex:tree_model_b12[] can be left as homework if time is short.
+    ]
     slide[
       Recall the tree model
       $
@@ -741,7 +769,7 @@
         A'(t) & = -0.3 dot.c (H(t))^2 + A(t)
       $
 
-      + Find all equilibrium solutions for $0 lt.eq b lt.eq 2$.
+      + Find all equilibrium solutions for $0 < b <= 2$.
         #solution[
           Solving
           $
@@ -753,8 +781,9 @@
             (H,A)= (100/9 b, 1000/27 b^2).
           $
         ]
-      + For which $b$ does a tree have the possibility of living forever? If the wind occasionally
-        blew off a few random leaves, would that change your answer?
+      + #label_question_part(<ex:tree_model_live_forever>) For which $b$ does a tree have the
+        possibility of living forever? If the wind occasionally blew off a few random leaves, would
+        that change your answer?
         #solution[
           If the tree is exactly at the equilibrium $(H,A) = (100/9 b, 1000/27 b^2)$, it will live
           forever.
@@ -768,7 +797,7 @@
           near this equilibrium spiral outwards, and so the equilibrium is repelling. When $b=1$, it
           is hard to tell what is happening.
         ]
-      +
+      + #label_question_part(<ex:tree_model_b5>)
         Find a value $b_5$ of $b$ so that there is an equilibrium with $H=5$.
         #solution[
           At a (positive) equilibrium, $H = 100/9 b$.
@@ -783,13 +812,13 @@
           Solving $12=100/9 b_(12)$, we get $b_(12) = 9/100 dot 12 = 108/100 = 1.08$.
         ]
 
-      + Predict what happens to a tree near equilibrium (but not at equilibrium) when $b=b_5$. What
-        about when $b=b_(12)$.
+      + #label_question_part(<ex:tree_model_b12>) Predict what happens to a tree near equilibrium
+        (but not at equilibrium) when $b=b_5$. What about when $b=b_(12)$.
         #solution[
           A tree near equilibrium when $b=b_5$ will eventually die. The fluctuations in leaf area
           and height get bigger and bigger until it has no leaves left and sinks forevermore.
 
-          A tree near equilibrium when $b=b_(12)$ stabilize in height and leaf area. The
+          A tree near equilibrium when $b=b_(12)$ stabilizes in height and leaf area. The
           fluctuations in leaf area and height get smaller and smaller and the tree lives forever.
         ]
     ]

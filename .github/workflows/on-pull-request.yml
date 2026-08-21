@@ -24,8 +24,8 @@ jobs:
             - name: Compile Typst Files
               uses: siefkenj/compile-typst-action@main
               with:
-                  source_paths: "book/book.typ book/slides.typ book/slides-white.typ"
-                  output_paths: "book/book.pdf book/slides.pdf book/slides-white.pdf"
+                  source_paths: "book/book.typ book/slides.typ book/slides-white.typ book/book-guide.typ"
+                  output_paths: "book/book.pdf book/slides.pdf book/slides-white.pdf book/book-guide.pdf"
                   fonts_path: "book"
 
             # upload all the built PDFs as an artifact.

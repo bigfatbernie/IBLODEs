@@ -48,8 +48,9 @@
     ]
     slide[
 
-      Consider the following argument for the population model #SS where
-      $P'(t) = P(t) dot abs(sin(2 pi t))$ with $P(0) = 10$:
+      The model #SS with $k=1$ states that
+      $P'(t) = P(t) dot abs(sin(2 pi t))$. Consider the following argument for
+      model #SS with initial population $P(0) = 10$:
 
       #quote(block: true)[
         #set text(blue)
@@ -57,7 +58,7 @@
         approximation,
         $ P(1) approx P(0) + P'(0) dot 1 = P(0) = 10. $
         At $t = 1$, the change in population $approx P'(1) = 0$, so
-        $ P(2) approx P(1) + P'(1) dot 1 = P(0) = 10. $
+        $ P(2) approx P(1) + P'(1) dot 1 = P(1) approx 10. $
         And so on.
 
         So, the population of starfish remains constant. #h(1fr)
@@ -404,7 +405,7 @@
       [Simulate more complicated models using a spreadsheet.],
     )
     notes[
-      This exercise is mean for a "modelling hour" class. Use as many parts as time allows, and
+      This exercise is meant for a "modelling hour" class. Use as many parts as time allows, and
       leave the remaining parts for homework.
 
       Emphasize the modelling processes again. Don't let students "jump to equations". One way to

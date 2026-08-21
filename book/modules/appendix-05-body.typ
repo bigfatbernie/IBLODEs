@@ -15,17 +15,17 @@ However, if we already know one solution to a differential equation, we can use 
 simplify the differential equation and make it easier to find the other solutions. The method for
 doing this is called *reduction of order*.
 
-This is an analgous procedure to finding the divisors of a number. For example if I want to find the
+This is an analogous procedure to finding the divisors of a number. For example if I want to find the
 divisors of 364 and I already know that 7 is a divisor, then I can divide 364 by 7 to get 52. Now I
 know that all the other divisors of 364 must also be divisors of 52, so I can focus on 52 (which is
 smaller and more manageable) instead of 364.
 
 The idea is that if we somehow found $y_1$ as a solution of $y'' + p(x) y' + q(x) y = 0$, then we
-could simplify this differential to a first order equation by assuming that a second solution is of
+could simplify this differential equation to a first order equation by assuming that a second solution is of
 the form $y_2(x) = y_1(x) v(x)$, where $v(x)$ is some function we need to find.
 
 #example(
-  prompt: [Find $y_2(x)$.],
+  prompt: [Consider the differential equation $y'' + p(x) y' + q(x) y = 0$ and suppose we know that $y_1$ is a solution. Find a second solution of the form $y_2(x) = y_1(x) v(x)$, where $v(x)$ is some function we need to find.],
   [
     We just need to find $v$. We plug $y_2$ into the equation:
 

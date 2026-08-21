@@ -28,7 +28,7 @@ Rather than introducing new techniques to study higher order differential equati
 trick to convert a higher-order equation into a system of first order differential equations.
 
 Consider the differential equation $f''=-f$. We now define a new function $g$ by $g=f'$. Thus,
-$g' = f''=0$. It follows that:
+$g' = f''=-f$. It follows that:
 
 #v(-1em)
 #align(center + horizon, stack(
@@ -99,7 +99,7 @@ ways:
   Thus, we have a system of $n$ first-order equations, the solutions of which should have $n$
   parameters.
 2. To solve an initial value problem for a higher-order differential equation $y^((n)) + ... = ...$,
-  we need values for $y(0)$, $y'(0)$, ..., $y^(n-1)(0)$. That is, we need $n$-tuples of initial
+  we need values for $y(0)$, $y'(0)$, ..., $y^((n-1))(0)$. That is, we need $n$-tuples of initial
   conditions to specify an initial value problem. Thus, in order to be able to solve initial value
   problems for an $n^"th"$ order differential equations, we expect the general solution to have $n$
   parameters.

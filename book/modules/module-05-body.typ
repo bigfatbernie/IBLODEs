@@ -113,7 +113,7 @@ Consider a modified version of the Ants-and-Aphids model from @mod:systems. In t
 a farmer that removes ants at a constant rate (10 thousand per day).
 #let Pant = $P_"ant"$
 #let Paph = $P_"aphid"$
-#let F(Pant, Paph) = (Pant + 0.5 * Paph - 10, 0.8 * Pant - 0.5 * Paph)
+#let F(Pant, Paph) = (Pant + 0.5 * Paph - 10, 0.5 * Pant - 0.5 * Paph)
 $
   & Pant' & = & Pant         & + & 0.5 dot Paph space space & - & space 10 \
   & Paph' & = & 0.5 dot Pant & - & 0.5 dot Paph             &   &
@@ -124,60 +124,19 @@ the number of ants and the number of aphids affect each other, we cannot just ch
 $Paph$. The same issue arises for $Paph'$. The conclusion is that a "slope field" for this system
 must have a $Pant$ axis, a $Paph$ axis, and a time axis. I.e., it is three-dimensional.
 
-// https://www.desmos.com/3d/xd9x9gilsk
 #{
   show: align.with(center)
-  image("../images/ant-aphid-3d.png", width: 3in)
+  slope_field_3d(
+    (P_ant, P_aphid, t) => (..F(P_ant, P_aphid), 1),
+    xlim: (0, 30),
+    ylim: (0, 30),
+    zlim: (0, 3),
+    width: 3in,
+    xlabel: Pant,
+    ylabel: Paph,
+    zlabel: $t$,
+  )
 }
-
-// XXX make correct 3d slope field Figure
-// #{
-//   import "@preview/plotsy-3d:0.1.0": plot-3d-vector-field
-
-//   let size = 20
-//   let scale_factor = 0.05
-//   let scale_len = 0.5
-//   let (xscale, yscale, zscale) = (0.3, 0.3, 0.3)
-//   let _i_func(P_ant, P_aphid, t) = (P_ant + 0.5 * P_aphid - 10)
-//   let _j_func(P_ant, P_aphid, t) = (0.8 * P_ant - 0.5 * P_aphid)
-//   let _k_func(P_ant, P_aphid, t) = 1
-//   let _norm(x, y, z) = calc.sqrt(
-//     _i_func(x, y, z) * _i_func(x, y, z) + _j_func(x, y, z) * _j_func(x, y, z) + _k_func(x, y, z) * _k_func(x, y, z),
-//   )
-//   let i_func(x, y, z) = _i_func(x, y, z) / _norm(x, y, z) * scale_len
-//   let j_func(x, y, z) = _j_func(x, y, z) / _norm(x, y, z) * scale_len
-//   let k_func(x, y, z) = _k_func(x, y, z) / _norm(x, y, z) * scale_len
-
-//   let i_func(x, y, z) = 0
-//   let j_func(x, y, z) = 0
-//   let k_func(x, y, z) = 1
-
-//   let color-func(x, y, z, x_lo, x_hi, y_lo, y_hi, z_lo, z_hi) = {
-//     return purple
-//   }
-
-
-//   align(
-//     center,
-//     plot-3d-vector-field(
-//       i_func,
-//       j_func,
-//       k_func,
-//       color-func: color-func,
-//       subdivisions: 4,
-//       subdivision_mode: "decrease",
-//       scale_dim: (xscale * scale_factor, yscale * scale_factor, zscale * scale_factor),
-//       xdomain: (0, size),
-//       ydomain: (0, size),
-//       zdomain: (0, size),
-//       // pad_high: (0,0,2),
-//       rotation_matrix: ((-1.5, 1.2, 4), (0, -1, 0)),
-//       axis_label_offset: (0.4, 0.2, 0.2),
-//       axis_text_offset: 0.08,
-//       vector_size: .1em,
-//     ),
-//   )
-// }
 
 
 It's hard to glean information from a three-dimensional slope field. What if, instead, we tried to
@@ -200,7 +159,7 @@ $(Pant', Paph')$ is always tangent to the solution curve.
 
 #{
   let _Delta = 0.1
-  let steps = 24
+  let steps = 28
   let soln = solve_2d_ivp(F, (3, 21), steps, Delta: _Delta, method: "rk4")
   let xs = lq.arange(0, _Delta * (steps + 1), step: _Delta)
   let arrow_samples = soln.chunks(5).map(v => v.at(0))
@@ -271,7 +230,7 @@ to zero and another region where the ant population is unbounded.
     yaxis: (position: 0, tip: tiptoe.stealth, subticks: none, label: $Paph$),
     lq.fill-between(
       (-1, 20),
-      // Line is y = 2/(3+sqrt(13)) * (x - 8.7)
+      // Line is y = -2/(3+sqrt(13)) * (x - 8.7)
       (32, -37),
       y2: (-37, -37),
       fill: green.darken(30%).transparentize(60%),

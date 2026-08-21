@@ -11,18 +11,18 @@ In this appendix you will learn
 
 Using Euler's method, we can find _numerical_ approximations to a solution to a differential
 equation. However, there are other types of useful approximations. In this appendix, we will focus
-on approximating a solution to a differential equation with _polynomial_.
+on approximating a solution to a differential equation with a _polynomial_.
 
 == Series Solutions
 
-Consider the differential $y'=y$. What would happen if we tried to write the "Taylor series" of a
-solution? The general form for a Taylor series (centered at $t=0$) is
+Consider the differential equation $y'=y$. What would happen if we tried to write the "Taylor series" of a
+solution? The general form for a Taylor series (centered at $x=0$) is
 $
-  T(x) = a_0 + a_1 t + a_2 t^2 + dots.c
+  T(x) = a_0 + a_1 x + a_2 x^2 + dots.c
 $
 and, if $T$ is differentiable, we can compute its derivative term by term:
 $
-  T'(t) = a_1 + 2 a_2 t + 3 a_3 t^2 + dots.c.
+  T'(x) = a_1 + 2 a_2 x + 3 a_3 x^2 + dots.c.
 $
 
 We are trying to solve the differential equation $y'=y$, so what happens if we set $T'(x) = T(x)$
@@ -143,39 +143,51 @@ differentiate your general power series more times.
 
 For those familiar with careful manipulation of power series, the previous sections should raise
 some eyebrows. After all, differentiating a power series term by term should only be done when the
-series _absolutely convergent_. Yet, in our previous examples, we differentiated abstractly without
+series is _absolutely convergent_. Yet, in our previous examples, we differentiated abstractly without
 checking any radius of convergence, etc. This is okay because *series solutions are a form of guess
 and check*.
 
 So far, we have been lax on the checking. Let's try another example where we're more careful.
 
-Consider the differential equation $(x - 1) dot y'(x) = 1$. Applying series techniques to this
-equation, we see $T(x) = a_0 + a_1 x + a_2 x^2 + dots.c$ is a solution if
-$
-  (x-1)dot & (a_1 + 2 a_2 x + 3 a_3 x^2 + 4 a_4 x^3 + dots.c) \
-           & = -a_1 + (a_1 - 2a_2)x + (2a_2 - 3 a_3)x^2 + (3 a_3 - 4 a_4)x^3 + dots.c \
-           & = 1.
-$
-Thus,
-$
-  a_1 & = -1 \
-  a_2 & = -1/2 \
-  a_3 & = -1/3 \
-  a_4 & = -1/4 \
-      & #h(.3em) dots.v
-$
-and so we get a series solution
-$
-  T(x) = a_0 - x - 1/2 x^2 - 1/3 x^3 - 1/4 x^4 - dots.c
-$
-for any constant $a_0$. *However*, $T(x)$ is not defined when $abs(x) > 1$ and so $T(x)$ cannot be a
-solution for all $x$. The series solution we found is only valid for $x in [-1, 1)$.#footnote[
-  You can see this by applying convergence tests to $T(x)$. The ratio test shows that $T(x)$
-  converges when $abs(x) < 1$ and the alternating series test shows that $T(x)$ converges when
-  $x=-1$.
-] Since this differential equation is separable, we can find explicit solutions of the form
-$y(x) = c_1 + ln(x-1)$ where $c_1$ is a parameter (there are also other solutions!). In particular,
-all these solutions are defined on the interval $(-infinity, 1)$.
+#example(
+  prompt: [
+    Find a series solution to the differential equation $(x-1) y'(x) = 1$.
+  ],
+)[
+  Applying series techniques to this equation, we see $T(x) = a_0 + a_1 x + a_2 x^2 + dots.c$ is a
+  solution if
+  $
+    (x-1)dot & (a_1 + 2 a_2 x + 3 a_3 x^2 + 4 a_4 x^3 + dots.c) \
+             & = -a_1 + (a_1 - 2a_2)x + (2a_2 - 3 a_3)x^2 + (3 a_3 - 4 a_4)x^3 + dots.c \
+             & = 1.
+  $
+  Thus,
+  $
+    a_1 & = -1 \
+    a_2 & = -1/2 \
+    a_3 & = -1/3 \
+    a_4 & = -1/4 \
+        & #h(.3em) dots.v
+  $
+  and so we get a series solution
+  $
+    T(x) = a_0 - x - 1/2 x^2 - 1/3 x^3 - 1/4 x^4 - dots.c
+  $
+  for any constant $a_0$. *However*, $T(x)$ is not defined when $abs(x) > 1$ and so $T(x)$ cannot be
+  a solution for all $x$. The series solution we found is only valid for $x in [-1, 1)$.#footnote[
+    You can see this by applying convergence tests to $T(x)$. The ratio test shows that $T(x)$
+    converges when $abs(x) < 1$ and the alternating series test shows that $T(x)$ converges when
+    $x=-1$.
+  ]
+]
 
-The moral of the story is: series solutions are a powerful form of guess and check, and we must not
-forget to check.
+In the example, we found a series solution for $(x-1) y'(x) = 1$ that diverges at, for example,
+$x = -2$. However, it would be incorrect to assume that _solutions_ to this differential equation
+must diverge at $x=-2$. Since this equation is separable, we can solve for a more general solution:
+$y(x) = c_1 + ln abs(x-1)$ with domain $(-infinity, 1) union (1, infinity)$. In particular, these
+solutions are all defined at $x=-2$.
+
+The moral of the story is: series solutions come with an additional burden. They may not converge
+(even if a valid solution exists)! When studying a differential equation via series solutions, make
+sure to check for the domain of convergence, and don't make assumptions about the differential
+equation outside of that domain.

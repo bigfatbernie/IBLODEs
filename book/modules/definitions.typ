@@ -40,7 +40,7 @@
       title: "Autonomous Differential Equation",
       label: <def_autonomous>,
       [
-        A differential is called _autonomous_ if it can be written without reference to the
+        A differential equation is called _autonomous_ if it can be written without reference to the
         independent variable.
       ],
     ),
@@ -145,7 +145,7 @@
       [
         The functions $arrow(v)_1(t), arrow(v)_2(t), dots, arrow(v)_(n)(t)$ are _linearly dependent_
         if there is a non-trivial linear combination of $arrow(v)_1(t), dots, arrow(v)_(n)(t)$ that
-        equals the zero for all $t in RR$.
+        equals the zero vector for all $t in RR$.
 
         Otherwise they are _linearly independent_.
       ],
@@ -166,7 +166,7 @@
       title: "Euler's Method",
       label: <eulers_method>,
       [
-        Let $y'(t)=f(t, y)$ be a differential and let $y$ be a solution satisfying $y(t_0)=y_1$. The
+        Let $y'(t)=f(t, y)$ be a differential equation and let $y$ be a solution satisfying $y(t_0)=y_0$. The
         _Euler approximation to $y$ with step size $Delta$_ is the sequence of points $(t_0,y_0)$,
         $(t_1, y_1)$, #dots, where
         $
@@ -250,7 +250,7 @@
       title: "Standard Basis",
       label: <standard_basis>,
       [
-        The *standard basis* for $RR^n$ is the set ${⃗arrow(e)_1, dots, arrow(e)_n}$ where
+        The *standard basis* for $RR^n$ is the set ${arrow(e)_1, dots, arrow(e)_n}$ where
         $
           arrow(e)_1 = mat(1; 0; 0; dots.v) quad
           arrow(e)_2 = mat(0; 1; 0; dots.v) quad

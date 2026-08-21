@@ -118,12 +118,70 @@ $y' = y^2$, and compare to the Picard-Lindelöf Theorem (#link(
     type of problem include figuring out the concentration of chemicals in bodies of water (rivers
     and lakes).
 
-    XXX
+    #align(center, {
+      let w = 3 // width of the tank
+      let h = 3.4 // height of the tank
+      let ry = .45 // vertical radius of the ellipses making the cylinder
+      let fill_height = .6 * h // the tank starts 60% full
 
-    // mywrapfigsimp is a custom LaTeX macro, so convert to a comment or image placeholder
-    // #mywrapfigsimp(1.60in, 1.65in)
-    // \inputpdft{lin-tank}
-    // (Insert figure: lin-tank.pdf)
+      let water = blue.lighten(70%)
+      let edge = blue.darken(30%)
+      let pipe = (paint: edge, thickness: 1.2pt)
+
+      cetz.canvas({
+        import cetz.draw: *
+
+        // The brine in the tank
+        circle((0, 0), radius: (w / 2, ry), fill: water, stroke: none)
+        rect((-w / 2, 0), (w / 2, fill_height), fill: water, stroke: none)
+        circle(
+          (0, fill_height),
+          radius: (w / 2, ry),
+          fill: water.lighten(30%),
+          stroke: .6pt + edge,
+        )
+
+        // The tank itself
+        line((-w / 2, 0), (-w / 2, h), stroke: .8pt + edge)
+        line((w / 2, 0), (w / 2, h), stroke: .8pt + edge)
+        arc((-w / 2, 0), start: 180deg, stop: 360deg, radius: (w / 2, ry), stroke: .8pt + edge)
+        circle((0, h), radius: (w / 2, ry), fill: none, stroke: .8pt + edge)
+
+        // Water flowing in
+        line(
+          (-w / 2 - 1.7, h + .9),
+          (-w / 2 + .5, h + .9),
+          (-w / 2 + .5, h + .15),
+          mark: (end: "stealth", fill: edge),
+          stroke: pipe,
+        )
+        content(
+          (-w / 2 - 1.7, h + 1.05),
+          anchor: "south-west",
+          text(size: 8pt)[5 litres/min \ 0.1 kg/litre],
+        )
+
+        // Water flowing out
+        line(
+          (w / 2, .4),
+          (w / 2 + 1.4, .4),
+          (w / 2 + 1.4, -.7),
+          mark: (end: "stealth", fill: edge),
+          stroke: pipe,
+        )
+        content(
+          (w / 2 + .7, .55),
+          anchor: "south",
+          text(size: 8pt)[3 litres/min],
+        )
+
+        // What is in the tank to start with
+        content(
+          (0, fill_height / 2),
+          text(size: 9pt)[60 litres \ 10 kg salt],
+        )
+      })
+    })
 
     A 100 litre tank contains 10 kilograms of salt dissolved in 60 litres of water. Solution of
     water and salt (brine) with concentration of 0.1 kilograms per litre is flowing in at the rate
@@ -166,14 +224,6 @@ $y' = y^2$, and compare to the Picard-Lindelöf Theorem (#link(
       x & = (60 + 2 t) / 10 + C (60 + 2 t)^( -3 / 2 ) .
     $
 
-    //mbxSTARTIGNORE
-    // #mywrapfig(3.25in)
-    // \capstart
-    // \diffyincludegraphics{width=3in}{width=4.5in}{linear-salt-graph}
-    // \caption{Graph of the solution $x$ kilograms of salt in the tank at time $t$.\label{linear-salt-graph:fig}}
-    //mbxENDIGNORE
-    // (Insert figure: linear-salt-graph)
-
     To find $C$, note that at $t = 0$, we have $x = 10$. That is,
     $ 10 = x(0) = 60 / 10 + C (60)^( -3 / 2 ) = 6 + C (60)^( -3 / 2 ) , $
     or
@@ -188,17 +238,36 @@ $y' = y^2$, and compare to the Picard-Lindelöf Theorem (#link(
             & approx 10 + 1859.03 (100)^( -3 / 2 ) approx 11.86 .
     $
     There are 11.86 kg of salt in the tank when it is full. See the figure for the graph of $x$ over
-    $t$. XXX
+    $t$.
 
     The concentration when the tank is full is approximately $11.86 / 100 = 0.1186$ kg/litre, and we
     started with $1 / 6$ or approximately 0.1667 kg/litre.
 
-    XXX Figure
-    //mbxlatex \begin{myfig}
-    //mbxlatex \capstart
-    //mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{linear-salt-graph}
-    //mbxlatex \caption{Graph of the solution $x$ kilograms of salt in the tank at time $t$.\label{linear-salt-graph:fig}}
-    //mbxlatex \end{myfig}
+    #{
+      // The constant of integration found above: C = 4 dot 60^(3/2)
+      let C = 4 * calc.pow(60, 1.5)
+      let salt(t) = (60 + 2 * t) / 10 + C * calc.pow(60 + 2 * t, -1.5)
+      let ts = lq.linspace(0, 20, num: 200)
+
+      figure(
+        caption: [Graph of the solution $x$ kilograms of salt in the tank at time $t$.],
+        numbering: none,
+        lq.diagram(
+          width: 8cm,
+          height: 4.5cm,
+          xlim: (0, 20),
+          ylim: (9.9, 12),
+          xaxis: (label: $t$),
+          yaxis: (label: $x$),
+          lq.plot(
+            ts,
+            ts.map(salt),
+            mark: none,
+            stroke: (paint: blue.darken(20%), thickness: 1.8pt),
+          ),
+        ),
+      )
+    }
   ],
 )
 
